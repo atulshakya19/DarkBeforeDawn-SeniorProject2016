@@ -4,8 +4,8 @@ using System.Collections;
 public class MovementScript : MonoBehaviour {
 
 	Rigidbody rigidBody;
-	float moveSpeed;
-	float jumpHeight;
+	public float moveSpeed;
+	public float jumpHeight;
 	Vector3 playerMove;
 
 	bool isGrounded = false;
