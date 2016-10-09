@@ -50,7 +50,7 @@ public class MovementScript : MonoBehaviour {
 			isGrounded = true;
 		}
 	}
-
+	//POOOOOOOOOOOOP!
 	void OnCollisionExit(Collision col){
 		isGrounded = false;
 	}
