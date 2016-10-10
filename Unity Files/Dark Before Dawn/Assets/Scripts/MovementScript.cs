@@ -15,8 +15,6 @@ public class MovementScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidBody = transform.GetComponent<Rigidbody> ();
-		moveSpeed = 3f;
-		jumpHeight = 5f;
 	}
 	
 	// Update is called once per frame
