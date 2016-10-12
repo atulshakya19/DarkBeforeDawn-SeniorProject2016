@@ -43,7 +43,7 @@ public class MovementScript : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision col){
-		if (col.collider.tag == "Ground") {
+		if (col.transform.tag == "Ground") {
 			Debug.Log ("Grounded");
 			isGrounded = true;
 		}
