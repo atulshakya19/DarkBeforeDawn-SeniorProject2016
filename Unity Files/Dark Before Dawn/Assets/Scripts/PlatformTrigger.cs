@@ -21,4 +21,8 @@ public class PlatformTrigger : MonoBehaviour {
 	void OnTriggerEnter (Collider coll){
 		platformCollider.isTrigger = false;
 	}
+
+	void OnTriggerExit (Collider coll){
+		platformCollider.isTrigger = false;
+	}
 }

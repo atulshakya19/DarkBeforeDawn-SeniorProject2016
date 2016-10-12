@@ -23,7 +23,6 @@ public class MovementScript : MonoBehaviour {
 		rigidBody.freezeRotation = true;
 
 		if (Input.GetButtonDown ("Vertical") && isGrounded) {
-			Debug.Log ("Up");
 			rigidBody.AddForce (new Vector3 (0f, jumpHeight, 0), ForceMode.Impulse);
 			inAir = true;
 		} else if (Input.GetButtonDown ("Vertical") && inAir && doubleJump) {
@@ -44,7 +43,6 @@ public class MovementScript : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col){
 		if (col.transform.tag == "Ground") {
-			Debug.Log ("Grounded");
 			isGrounded = true;
 		}
 	}
