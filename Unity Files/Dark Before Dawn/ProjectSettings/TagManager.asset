@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Gems
+  - AI Edge
   layers:
   - Default
   - TransparentFX

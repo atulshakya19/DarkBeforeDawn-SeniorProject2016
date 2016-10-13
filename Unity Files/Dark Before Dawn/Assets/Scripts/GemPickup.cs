@@ -15,7 +15,7 @@ public class GemPickup : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter (Collision other){
+	void OnTriggerEnter (Collider other){
 		if (other.transform.tag == "Gems") {
 			GemCount += 1;
 			Debug.Log ("You Have " + GemCount + " Gems in the Bag.");

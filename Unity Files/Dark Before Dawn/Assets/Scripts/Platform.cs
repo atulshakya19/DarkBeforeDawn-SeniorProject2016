@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Platform : MonoBehaviour {
 
-	private Collider platformCollider;
-	private Collider colliderReset;
+	private Collider platformCollider; //collider for the platform where the player lands
+	private Collider colliderReset; //the collider that makes the platformCollider trigger
 
 	// Use this for initialization
 	void Start () {

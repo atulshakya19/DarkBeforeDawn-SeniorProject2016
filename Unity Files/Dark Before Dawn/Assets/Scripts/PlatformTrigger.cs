@@ -3,13 +3,14 @@ using System.Collections;
 
 public class PlatformTrigger : MonoBehaviour {
 
-	private Collider colliderTrigger;
-	private Collider platformCollider;
+	private Collider colliderTrigger; //trigger that makes the platformCollider none triggered
+	private Collider platformCollider; //collider for the platform where the player lands
 
 	// Use this for initialization
 	void Start () {
 		colliderTrigger = GetComponent<BoxCollider> ();
 		platformCollider = transform.parent.GetComponent<BoxCollider> ();
+
 		colliderTrigger.isTrigger = true;
 	}
 	

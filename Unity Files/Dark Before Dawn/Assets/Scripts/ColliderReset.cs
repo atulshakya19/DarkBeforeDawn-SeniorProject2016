@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ColliderReset : MonoBehaviour {
 
-	private Collider platformCollider;
+	private Collider platformCollider; //collider for the platform where the player lands
+
 	// Use this for initialization
 	void Start () {
 		platformCollider = transform.parent.GetComponent<BoxCollider> ();
@@ -15,6 +16,9 @@ public class ColliderReset : MonoBehaviour {
 	}
 
 	void OnTriggerExit (Collider col){
-		platformCollider.isTrigger = true;
+		if (col.transform.tag == "Player") {
+			platformCollider.isTrigger = true;
+	
+		}
 	}
 }
