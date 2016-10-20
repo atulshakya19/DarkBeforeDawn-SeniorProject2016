@@ -12,7 +12,7 @@ public class MovingPlatform : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (yes) {
-			
+			transform.rotation = Quaternion.Lerp (transform.rotation, b.rotation, Time.deltaTime);
 		}
 	}
 
@@ -20,7 +20,7 @@ public class MovingPlatform : MonoBehaviour {
 
 		if (col.transform.tag == "Player") {
 			yes = true;
-			transform.rotation = Quaternion.EulerAngles (new Vector3 (0,0,90));
+
 		}
 	}
 }
