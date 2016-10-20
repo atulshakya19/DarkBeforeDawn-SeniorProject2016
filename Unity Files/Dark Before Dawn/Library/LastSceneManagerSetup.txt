@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/StartScreen.unity
+- path: Assets/_Scenes/Explaratory.unity
   isLoaded: 1
   isActive: 1
