@@ -21,3 +21,5 @@ D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\Temp\bin\
 D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.dll
 D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Fernando\Desktop\Senior Project\Dark Before Dawn\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Fernando\Desktop\Senior Project\Dark Before Dawn\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.dll
