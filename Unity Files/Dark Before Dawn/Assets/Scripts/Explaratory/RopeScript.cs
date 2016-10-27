@@ -10,13 +10,15 @@ public class RopeScript : MonoBehaviour {
 	public float speed= 1;
 
 
-	public float distance = 2;
+	public float distance = 1;
 
 	public GameObject nodePrefab;
 
 	public GameObject player;
 
 	public GameObject lastNode;
+
+	private bool _touch = false;
 
 
 	public LineRenderer lr;
@@ -46,11 +48,9 @@ public class RopeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-		transform.position = Vector2.MoveTowards (transform.position,destiny,speed);
-
-
-
+		if (!_touch) {
+			Move ();
+		}
 
 		if ((Vector2)transform.position != destiny) {
 
@@ -122,6 +122,15 @@ public class RopeScript : MonoBehaviour {
 
 	}
 
+	void Move (){
+		transform.Translate(Vector2.right * Time.deltaTime * 25f);
+	}
 
+	void OnTriggerEnter2D (Collider2D col){
+		if (col.gameObject.tag == "Swinging Platform") {
+			_touch = true;
+			destiny = transform.position;
+		}
+	}
 
 }
