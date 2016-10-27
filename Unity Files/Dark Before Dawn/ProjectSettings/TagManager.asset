@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Mid Edge
   - Platform Wall
+  - Swinging Platform
   layers:
   - Default
   - TransparentFX

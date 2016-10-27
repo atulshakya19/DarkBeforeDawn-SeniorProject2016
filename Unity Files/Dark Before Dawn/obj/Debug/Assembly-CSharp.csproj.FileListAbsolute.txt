@@ -21,3 +21,26 @@ D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\Temp\bin\
 D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.dll
 D:\SCAD Stuff\Dark Before Dawn\Repository\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.pdb
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Assembly-CSharp.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEditor.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.Analytics.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.UI.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Mono.Cecil.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Unity.DataContract.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Unity.CecilTools.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.xml
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEditor.xml
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.UI.xml
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\Temp\bin\Debug\UnityEngine.Analytics.xml
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.dll
+D:\SCAD\DarkBeforeDawn-SeniorProject2016\Unity Files\Dark Before Dawn\obj\Debug\Assembly-CSharp.pdb

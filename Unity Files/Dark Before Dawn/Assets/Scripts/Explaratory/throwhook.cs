@@ -5,6 +5,7 @@ public class throwhook : MonoBehaviour {
 
 
 	public GameObject hook;
+	public GameObject hookPoint;
 
 
 	public bool ropeActive;
@@ -25,12 +26,12 @@ public class throwhook : MonoBehaviour {
 
 
 			if (ropeActive == false) {
-				Vector2 destiny = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+				//Vector2 destiny = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 
 
-				curHook = (GameObject)Instantiate (hook, transform.position, Quaternion.identity);
+				curHook = (GameObject)Instantiate (hook, hookPoint.transform.position, Quaternion.identity);
 
-				curHook.GetComponent<RopeScript> ().destiny = destiny;
+				//curHook.GetComponent<RopeScript> ().destiny = destiny;
 
 
 				ropeActive = true;
