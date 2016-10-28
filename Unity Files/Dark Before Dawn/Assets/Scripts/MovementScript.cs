@@ -32,6 +32,9 @@ public class MovementScript : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
+		if (Input.GetKeyDown (KeyCode.A)) {
+			transform.eulerAngles = new Vector3 (0, 0, 0);
+		}
 
 		playerMove.Set (Input.GetAxis ("Horizontal"), 0,0);
 

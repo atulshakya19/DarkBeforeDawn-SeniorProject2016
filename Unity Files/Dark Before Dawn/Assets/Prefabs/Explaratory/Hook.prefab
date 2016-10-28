@@ -93,6 +93,7 @@ MonoBehaviour:
   nodePrefab: {fileID: 1000010735631472, guid: 33f2486815588ed41a616ccb69c8c0ac, type: 2}
   player: {fileID: 0}
   lastNode: {fileID: 0}
+  RopeLife: 2
   lr: {fileID: 0}
   Nodes: []
 --- !u!120 &120000012112511180

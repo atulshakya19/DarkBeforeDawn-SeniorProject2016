@@ -20,6 +20,9 @@ public class RopeScript : MonoBehaviour {
 
 	private bool _touch = false;
 
+	private bool _started = false;
+	public float RopeLife = 3f;
+
 
 	public LineRenderer lr;
 
@@ -47,6 +50,11 @@ public class RopeScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		if (!_started)
+		{
+			StartCoroutine(TimeToDie());
+		}
 
 		if (!_touch) {
 			Move ();
@@ -131,6 +139,19 @@ public class RopeScript : MonoBehaviour {
 			_touch = true;
 			destiny = transform.position;
 		}
+	}
+
+	IEnumerator TimeToDie()
+	{
+		//Indicate that is has started
+
+		_started = true;
+
+		yield return new WaitForSeconds(RopeLife);
+
+		//Destry the target
+
+		Destroy(this.gameObject);
 	}
 
 }
