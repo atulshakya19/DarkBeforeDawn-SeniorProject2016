@@ -1768,8 +1768,8 @@ GameObject:
   - 114: {fileID: 1643823372}
   - 114: {fileID: 1643823371}
   - 114: {fileID: 267395780}
-  - 114: {fileID: 1643823370}
   - 114: {fileID: 1643823368}
+  - 114: {fileID: 1643823369}
   m_Layer: 0
   m_Name: Main Lady
   m_TagString: Player
@@ -1790,11 +1790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertedMouse: 0
---- !u!114 &1643823370
+--- !u!114 &1643823369
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114000011518970454, guid: 2bd3ba683ac57424e8b6bc6f455dcc63,
-    type: 2}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643823367}
   m_Enabled: 1

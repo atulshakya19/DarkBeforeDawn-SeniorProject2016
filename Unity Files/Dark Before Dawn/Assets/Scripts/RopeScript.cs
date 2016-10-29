@@ -15,7 +15,7 @@ public class RopeScript : MonoBehaviour {
 
 	public GameObject nodePrefab;
 
-	public GameObject hookPoint;
+	public GameObject Player;
 
 	public GameObject lastNode;
 
@@ -40,7 +40,7 @@ public class RopeScript : MonoBehaviour {
 
 		lr = GetComponent<LineRenderer> ();
 
-		hookPoint = GameObject.FindGameObjectWithTag ("hookPoint");
+		Player = GameObject.FindGameObjectWithTag ("Player");
 
 		lastNode = transform.gameObject;
 
@@ -53,10 +53,12 @@ public class RopeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		/*
 		if (!_started)
 		{
 			StartCoroutine(TimeToDie());
 		}
+		*/
 
 		if (!_touch) {
 			
@@ -65,7 +67,7 @@ public class RopeScript : MonoBehaviour {
 
 		if ((Vector2)transform.position != destiny) {
 
-			if (Vector2.Distance (hookPoint.transform.position, lastNode.transform.position) > distance) {
+			if (Vector2.Distance (Player.transform.position, lastNode.transform.position) > distance) {
 
 
 				CreateNode ();
@@ -79,13 +81,13 @@ public class RopeScript : MonoBehaviour {
 
 
 
-			while(Vector2.Distance (hookPoint.transform.position, lastNode.transform.position) > distance)
+			while(Vector2.Distance (Player.transform.position, lastNode.transform.position) > distance)
 			{
 				CreateNode ();
 			}
 
 
-			lastNode.GetComponent<HingeJoint2D> ().connectedBody = hookPoint.GetComponent<Rigidbody2D> ();
+			lastNode.GetComponent<HingeJoint2D> ().connectedBody = Player.GetComponent<Rigidbody2D> ();
 		}
 
 
@@ -105,7 +107,7 @@ public class RopeScript : MonoBehaviour {
 
 		}
 
-		lr.SetPosition (i, hookPoint.transform.position);
+		lr.SetPosition (i, Player.transform.position);
 
 	}
 
@@ -113,7 +115,7 @@ public class RopeScript : MonoBehaviour {
 	void CreateNode()
 	{
 
-		Vector2 pos2Create = hookPoint.transform.position - lastNode.transform.position;
+		Vector2 pos2Create = Player.transform.position - lastNode.transform.position;
 		pos2Create.Normalize ();
 		pos2Create *= distance;
 		pos2Create += (Vector2)lastNode.transform.position;
