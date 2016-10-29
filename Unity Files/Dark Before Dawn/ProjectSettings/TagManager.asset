@@ -11,6 +11,7 @@ TagManager:
   - Mid Edge
   - Platform Wall
   - Swinging Platform
+  - hookPoint
   layers:
   - Default
   - TransparentFX

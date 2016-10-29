@@ -29,7 +29,7 @@ public class throwhook : MonoBehaviour {
 				//Vector2 destiny = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 
 
-				curHook = (GameObject)Instantiate (hook, hookPoint.transform.position, Quaternion.identity);
+				curHook = (GameObject)Instantiate (hook, hookPoint.transform.position, hookPoint.transform.rotation);
 
 				//curHook.GetComponent<RopeScript> ().destiny = destiny;
 

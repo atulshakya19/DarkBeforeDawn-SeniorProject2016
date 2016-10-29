@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class RopeScript : MonoBehaviour {
 
 	public Vector2 destiny;
+	private throwhook _throwhook;
 
 	public float speed= 1;
 
@@ -14,14 +15,14 @@ public class RopeScript : MonoBehaviour {
 
 	public GameObject nodePrefab;
 
-	public GameObject player;
+	public GameObject hookPoint;
 
 	public GameObject lastNode;
 
 	private bool _touch = false;
 
 	private bool _started = false;
-	public float RopeLife = 3f;
+	public float RopeLife = 1.5f;
 
 
 	public LineRenderer lr;
@@ -35,10 +36,11 @@ public class RopeScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		_throwhook = GetComponent<throwhook> ();
 
 		lr = GetComponent<LineRenderer> ();
 
-		player = GameObject.FindGameObjectWithTag ("Player");
+		hookPoint = GameObject.FindGameObjectWithTag ("hookPoint");
 
 		lastNode = transform.gameObject;
 
@@ -57,12 +59,13 @@ public class RopeScript : MonoBehaviour {
 		}
 
 		if (!_touch) {
+			
 			Move ();
 		}
 
 		if ((Vector2)transform.position != destiny) {
 
-			if (Vector2.Distance (player.transform.position, lastNode.transform.position) > distance) {
+			if (Vector2.Distance (hookPoint.transform.position, lastNode.transform.position) > distance) {
 
 
 				CreateNode ();
@@ -76,13 +79,13 @@ public class RopeScript : MonoBehaviour {
 
 
 
-			while(Vector2.Distance (player.transform.position, lastNode.transform.position) > distance)
+			while(Vector2.Distance (hookPoint.transform.position, lastNode.transform.position) > distance)
 			{
 				CreateNode ();
 			}
 
 
-			lastNode.GetComponent<HingeJoint2D> ().connectedBody = player.GetComponent<Rigidbody2D> ();
+			lastNode.GetComponent<HingeJoint2D> ().connectedBody = hookPoint.GetComponent<Rigidbody2D> ();
 		}
 
 
@@ -102,7 +105,7 @@ public class RopeScript : MonoBehaviour {
 
 		}
 
-		lr.SetPosition (i, player.transform.position);
+		lr.SetPosition (i, hookPoint.transform.position);
 
 	}
 
@@ -110,7 +113,7 @@ public class RopeScript : MonoBehaviour {
 	void CreateNode()
 	{
 
-		Vector2 pos2Create = player.transform.position - lastNode.transform.position;
+		Vector2 pos2Create = hookPoint.transform.position - lastNode.transform.position;
 		pos2Create.Normalize ();
 		pos2Create *= distance;
 		pos2Create += (Vector2)lastNode.transform.position;
@@ -150,8 +153,8 @@ public class RopeScript : MonoBehaviour {
 		yield return new WaitForSeconds(RopeLife);
 
 		//Destry the target
+		Destroy(gameObject);
 
-		Destroy(this.gameObject);
 	}
 
 }

@@ -32,10 +32,6 @@ public class MovementScript : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (Input.GetKeyDown (KeyCode.A)) {
-			transform.eulerAngles = new Vector3 (0, 0, 0);
-		}
-
 		playerMove.Set (Input.GetAxis ("Horizontal"), 0,0);
 
 		Vector3 newPostion = transform.position + playerMove.normalized * moveSpeed * Time.deltaTime;
@@ -49,7 +45,7 @@ public class MovementScript : MonoBehaviour {
 			isGrounded = true;
 		}
 	}
-	//POOOOOOOOOOOOP!
+
 	void OnCollisionExit(Collision col){
 		isGrounded = false;
 	}
