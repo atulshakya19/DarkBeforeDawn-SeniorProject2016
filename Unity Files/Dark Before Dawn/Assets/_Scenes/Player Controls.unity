@@ -404,7 +404,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 933225254}
+      - m_Target: {fileID: 0}
         m_MethodName: TakeDamage
         m_Mode: 3
         m_Arguments:
@@ -1160,22 +1160,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 854565571}
---- !u!1 &933225253 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013646904464, guid: 5e260d4acb50b8548bf9a5fa588861e5,
-    type: 2}
-  m_PrefabInternal: {fileID: 114629597}
---- !u!114 &933225254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 933225253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29f499dfa8dde554083e5b789da44fe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1069971906
 GameObject:
   m_ObjectHideFlags: 0
