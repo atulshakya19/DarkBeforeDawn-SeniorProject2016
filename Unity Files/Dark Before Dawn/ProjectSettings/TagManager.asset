@@ -5,13 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Gems
   - AI Edge
   - Enemy
   - Mid Edge
   - Platform Wall
   - Swinging Platform
   - hookPoint
+  - Rift
+  - Gem 1
+  - Gem 2
+  - Gem 3
   layers:
   - Default
   - TransparentFX
