@@ -6,12 +6,16 @@ public class MovementScript : MonoBehaviour {
 	Rigidbody rigidBody;
 	public float moveSpeed;
 	public float jumpHeight;
+	public float jumpPushForce = 10f;
+	public float jumpForce = 700f;
 	Vector3 playerMove;
 
 	bool isGrounded = false;
 	bool inAir = false;
 	public bool doubleJump = false;
-	public bool turnLeft = false; // bool to see which direction the player is facing
+	public bool touchingWall = false;
+	public bool facingRight = true; // bool to see which direction the player is facing
+
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +27,7 @@ public class MovementScript : MonoBehaviour {
 		
 		rigidBody.freezeRotation = true;
 
+		/*
 		//change the direction of the player to face left if he is moving left.
 		if (playerMove.x < 0) {
 			transform.Rotate (new Vector3 (0, 180, 0));
@@ -35,6 +40,13 @@ public class MovementScript : MonoBehaviour {
 		if (turnLeft && playerMove.x == 0){
 			transform.Rotate (new Vector3 (0, 180, 0));
 		}
+		*/
+
+		if (playerMove.x > 0 && !facingRight) {
+			Flip ();
+		} else if (playerMove.x < 0 && facingRight) {
+			Flip ();
+		}
 
 		if (Input.GetButtonDown ("Vertical") && isGrounded) {
 			rigidBody.AddForce (new Vector3 (0f, jumpHeight, 0), ForceMode.Impulse);
@@ -43,10 +55,19 @@ public class MovementScript : MonoBehaviour {
 			rigidBody.AddForce (new Vector3 (0f, jumpHeight, 0), ForceMode.Impulse);
 			inAir = false;
 		}
+
+		if (touchingWall && Input.GetButtonDown ("Vertical")) {
+			WallJump ();
+		}
 	}
 
 	void FixedUpdate(){
-		
+
+		if (touchingWall) {
+			isGrounded = false;
+			doubleJump = false;
+		}
+
 		playerMove.Set (Input.GetAxis ("Horizontal"), 0,0);
 
 		if (playerMove == Vector3.zero)
@@ -61,14 +82,43 @@ public class MovementScript : MonoBehaviour {
 		//if(rigidBody.rotation != newRotation) 
 			//rigidBody.rotation = Quaternion.RotateTowards(rigidBody.rotation, newRotation,turnSpeed * Time.deltaTime);
 	}
+		
 
 	void OnCollisionEnter (Collision col){
-		if (col.transform.tag == "Ground") {
-			isGrounded = true;
+
+		if (col.transform.tag == "Wall Jump") {
+			touchingWall = true;
 		}
 	}
 
-	void OnCollisionExit(Collision col){
-		isGrounded = false;
+	void OnCollisionStay (Collision col){
+		if (col.transform.tag == "Ground") {
+			isGrounded = true;
+			doubleJump = true;
+		}
+
 	}
+
+	void OnCollisionExit(Collision col){
+		if (col.transform.tag == "Ground") {
+			isGrounded = false;
+		}
+		if (col.transform.tag == "Wall Jump") {
+			touchingWall = false;
+			Debug.Log (touchingWall);
+		}
+	}
+
+	void Flip(){
+		facingRight = !facingRight;
+
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
+
+	void WallJump(){
+		rigidBody.AddForce(jumpPushForce,jumpForce,0);
+	}
+		
 }
