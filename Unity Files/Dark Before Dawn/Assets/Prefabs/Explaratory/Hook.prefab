@@ -23,8 +23,8 @@ GameObject:
   - 50: {fileID: 50000011365037924}
   - 58: {fileID: 58000012650581040}
   - 233: {fileID: 233000012299210468}
-  - 114: {fileID: 114000013298760152}
   - 120: {fileID: 120000012112511180}
+  - 114: {fileID: 114000010524890532}
   m_Layer: 0
   m_Name: Hook
   m_TagString: Untagged
@@ -76,7 +76,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114000013298760152
+--- !u!114 &114000010524890532
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -84,12 +84,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000014111375124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 084d721326aaa794b8d3b17d93144e2e, type: 3}
+  m_Script: {fileID: 11500000, guid: f54b233775f487d4f8af8e0750ee57db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   destiny: {x: 0, y: 0}
-  speed: 2
-  distance: 2
+  speed: 1
+  distance: 1
   nodePrefab: {fileID: 1000010735631472, guid: 33f2486815588ed41a616ccb69c8c0ac, type: 2}
   Player: {fileID: 0}
   lastNode: {fileID: 0}

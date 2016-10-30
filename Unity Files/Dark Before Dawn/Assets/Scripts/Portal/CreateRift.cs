@@ -10,7 +10,7 @@ public class CreateRift : MonoBehaviour {
 	private Rigidbody _rigidbody;
 	private MovementScript _move;
 	private GameObject riftA;
-
+	private float currentSpeed;
 	public bool _enterRift;
 	public bool _riftThere;
 
@@ -21,6 +21,7 @@ public class CreateRift : MonoBehaviour {
 		_rigidbody = GetComponent<Rigidbody> ();
 		_gemActive = GetComponent <GemPickup> ();
 
+		currentSpeed = _move.moveSpeed;
 	}
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class CreateRift : MonoBehaviour {
 			Destroy (riftA);
 			_riftThere = false;
 			_rigidbody.isKinematic = false;
-			_move.enabled = true;
+			_move.moveSpeed = currentSpeed;
 			_enterRift = false;
 		}
 
@@ -45,12 +46,12 @@ public class CreateRift : MonoBehaviour {
 			}
 		} else if (_enterRift && GemActive == "Gem 2" ) {
 			Destroy (riftA);
-			_move.enabled = false;
+			_move.moveSpeed = 0;
 			_rigidbody.isKinematic = true;
 
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				transform.position = _destiny;
-				_move.enabled = true;
+				_move.moveSpeed = currentSpeed;
 				_enterRift = false;
 				_riftThere = false;
 				_rigidbody.isKinematic = false;

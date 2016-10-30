@@ -23,6 +23,11 @@ public class throwhook : MonoBehaviour {
 		
 		string GemActive = _gemActive.ActiveGem;
 
+		if (GemActive != "Gem 1") {
+			Destroy (curHook);
+			ropeActive = false;
+		}
+
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (ropeActive == false && GemActive == "Gem 1") {
 				curHook = (GameObject)Instantiate (hook, hookPoint.transform.position, hookPoint.transform.rotation);

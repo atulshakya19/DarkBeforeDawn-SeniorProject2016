@@ -44,9 +44,11 @@ GameObject:
   - 114: {fileID: 114000012388754726}
   - 114: {fileID: 114000012681302920}
   - 114: {fileID: 114000012869942984}
-  - 114: {fileID: 114000011518970454}
-  - 114: {fileID: 114000012602870626}
   - 114: {fileID: 114000010634283374}
+  - 114: {fileID: 114000013884155318}
+  - 114: {fileID: 114000013801524018}
+  - 114: {fileID: 114000014014133544}
+  - 114: {fileID: 114000013124039250}
   m_Layer: 0
   m_Name: Main Lady
   m_TagString: Player
@@ -74,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010235115202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.797681, y: -1.823851, z: 0}
+  m_LocalPosition: {x: -9.451143, y: -1.5686255, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -180,20 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertedMouse: 0
---- !u!114 &114000011518970454
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010235115202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2205e00dac9ade04d9336f84001930b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hook: {fileID: 1000014111375124, guid: be98740124ffe2a4cb6d07b033c142be, type: 2}
-  hookPoint: {fileID: 1000010231625910}
-  ropeActive: 0
 --- !u!114 &114000012388754726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,18 +196,7 @@ MonoBehaviour:
   moveSpeed: 4
   jumpHeight: 6
   doubleJump: 1
---- !u!114 &114000012602870626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010235115202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae96b9db7310e3448cb0107f4d321fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mouseX: 0
+  turnLeft: 0
 --- !u!114 &114000012681302920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,6 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8847d810b43cb2342b8b8879c4432b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GemBag:
+  - 
+  - 
+  - 
+  ActiveGem: 
 --- !u!114 &114000012869942984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,6 +227,58 @@ MonoBehaviour:
   fullHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+--- !u!114 &114000013124039250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2205e00dac9ade04d9336f84001930b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 1000014111375124, guid: be98740124ffe2a4cb6d07b033c142be, type: 2}
+  hookPoint: {fileID: 1000010231625910}
+  ropeActive: 0
+--- !u!114 &114000013801524018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3945e4947e93f842a21457c0338a16e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000013884155318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93f2f4985a130c4a9032f8f183c8b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rift: {fileID: 1000010838621400, guid: 2317c9e7dba03114cb7b6f38de9738e4, type: 2}
+  _enterRift: 0
+  _riftThere: 0
+--- !u!114 &114000014014133544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3ae6d393ec37244befaf3b41e3a108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bullet: {fileID: 1000013648784710, guid: a44dc2d42a8cd6f4398f1ce3b68d85fa, type: 2}
+  BulletPoint: {fileID: 1000010231625910}
 --- !u!135 &135000013559701848
 SphereCollider:
   m_ObjectHideFlags: 1
