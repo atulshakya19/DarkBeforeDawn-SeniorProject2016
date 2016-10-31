@@ -27,21 +27,6 @@ public class MovementScript : MonoBehaviour {
 		
 		rigidBody.freezeRotation = true;
 
-		/*
-		//change the direction of the player to face left if he is moving left.
-		if (playerMove.x < 0) {
-			transform.Rotate (new Vector3 (0, 180, 0));
-			turnLeft = true;
-		} else if (playerMove.x > 0) {
-			turnLeft = false;
-		}
-
-		//keep the direction of the player to face the the direction he was facing before coming to a stop.
-		if (turnLeft && playerMove.x == 0){
-			transform.Rotate (new Vector3 (0, 180, 0));
-		}
-		*/
-
 		if (playerMove.x > 0 && !facingRight) {
 			Flip ();
 		} else if (playerMove.x < 0 && facingRight) {
@@ -76,6 +61,7 @@ public class MovementScript : MonoBehaviour {
 		Vector3 newPostion = transform.position + playerMove.normalized * moveSpeed * Time.deltaTime;
 
 		rigidBody.MovePosition (newPostion);
+
 
 		//Quaternion newRotation = Quaternion.LookRotation (playerMove);  
 

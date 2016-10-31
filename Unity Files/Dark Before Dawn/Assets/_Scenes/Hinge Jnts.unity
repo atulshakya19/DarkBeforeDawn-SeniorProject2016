@@ -1069,7 +1069,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012267318676, guid: 2bd3ba683ac57424e8b6bc6f455dcc63, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.11
+      value: -5.79
       objectReference: {fileID: 0}
     - target: {fileID: 4000012267318676, guid: 2bd3ba683ac57424e8b6bc6f455dcc63, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1131,11 +1131,11 @@ HingeJoint:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1687914894}
-  m_ConnectedBody: {fileID: 1502758072}
+  m_ConnectedBody: {fileID: 1020083326}
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.16744214, y: -1.948778, z: 0.15325904}
+  m_ConnectedAnchor: {x: -0.018604191, y: -0.9653813, z: 0.15850638}
   m_UseSpring: 0
   m_Spring:
     spring: 0
