@@ -53,7 +53,7 @@ public class RopeScript1: MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider col){
-		if (col.gameObject.tag == "Swinging Platform") {
+		if (col.gameObject.tag == "Ground") {
 			_touch = true;
 			destiny = transform.position;
 		}

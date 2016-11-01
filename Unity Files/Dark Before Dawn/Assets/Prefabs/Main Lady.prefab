@@ -48,7 +48,8 @@ GameObject:
   - 114: {fileID: 114000013884155318}
   - 114: {fileID: 114000013801524018}
   - 114: {fileID: 114000014014133544}
-  - 114: {fileID: 114000013124039250}
+  - 120: {fileID: 120000011894833606}
+  - 114: {fileID: 114000013946136812}
   m_Layer: 0
   m_Name: Main Lady
   m_TagString: Player
@@ -76,7 +77,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010235115202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.32, y: -0.37, z: 0}
+  m_LocalPosition: {x: 2.85, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -212,10 +213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GemBag:
+  - Gem 1
   - 
   - 
-  - 
-  ActiveGem: 
+  ActiveGem: Gem 1
 --- !u!114 &114000012869942984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,20 +231,6 @@ MonoBehaviour:
   fullHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
---- !u!114 &114000013124039250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010235115202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2205e00dac9ade04d9336f84001930b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hook: {fileID: 1000011374128098, guid: ce894a769b249a149a21c5976b82477f, type: 2}
-  hookPoint: {fileID: 1000010231625910}
-  ropeActive: 0
 --- !u!114 &114000013801524018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +256,21 @@ MonoBehaviour:
   rift: {fileID: 1000010838621400, guid: 2317c9e7dba03114cb7b6f38de9738e4, type: 2}
   _enterRift: 0
   _riftThere: 0
+--- !u!114 &114000013946136812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2205e00dac9ade04d9336f84001930b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hook: {fileID: 1000013040553072, guid: ce894a769b249a149a21c5976b82477f, type: 2}
+  hookPoint: {fileID: 1000010231625910}
+  ropeActive: 0
+  curHook: {fileID: 0}
 --- !u!114 &114000014014133544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,6 +284,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1000013648784710, guid: a44dc2d42a8cd6f4398f1ce3b68d85fa, type: 2}
   BulletPoint: {fileID: 1000010231625910}
+--- !u!120 &120000011894833606
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c565b9138be9e8d45a69ccbd357488bb, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: 0.1
+    endWidth: 0.1
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  m_UseWorldSpace: 1
 --- !u!135 &135000013559701848
 SphereCollider:
   m_ObjectHideFlags: 1

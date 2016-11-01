@@ -33,7 +33,7 @@ public class MovementScript : MonoBehaviour {
 			Flip ();
 		}
 
-		if (Input.GetButtonDown ("Vertical") && isGrounded) {
+		if (Input.GetButtonDown ("Vertical")) {
 			rigidBody.AddForce (new Vector3 (0f, jumpHeight, 0), ForceMode.Impulse);
 			inAir = true;
 		} else if (Input.GetButtonDown ("Vertical") && inAir && doubleJump) {

@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Death(){
 
-		enemyAi.isDead = true;
+
 
 	}
 
