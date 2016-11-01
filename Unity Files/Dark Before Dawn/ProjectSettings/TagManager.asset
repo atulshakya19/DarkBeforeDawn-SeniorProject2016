@@ -18,6 +18,7 @@ TagManager:
   - Wall Jump
   - Hook
   - Bullet
+  - Bullet AI
   layers:
   - Default
   - TransparentFX

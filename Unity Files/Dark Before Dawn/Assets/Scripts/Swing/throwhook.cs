@@ -51,7 +51,6 @@ public class throwhook : MonoBehaviour {
 		}
 
 		if (curHook.GetComponent<RopeScript1>()._touch) {
-			Debug.Log ("True");
 			//hook.transform.rotation = Quaternion.identity;
 			if (!jointAdded) {
 				_joint = gameObject.AddComponent<HingeJoint> ();

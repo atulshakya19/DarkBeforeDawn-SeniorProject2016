@@ -7,7 +7,10 @@ public class MovementScriptB: MonoBehaviour {
 	private GameObject player;
 	private RopeScript1 _rope;
 
+	private string lastKey;
 	public float speed = 100f;
+
+	public float currentZ;
 
 
 	// Use this for initialization
@@ -19,21 +22,29 @@ public class MovementScriptB: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		/*
+		
 		if (_rope._touch) {
-			Debug.Log (transform.localRotation.z);
-			if (transform.localRotation.z < 0) {
-				transform.Rotate (Vector3.forward * speed * Time.deltaTime);
-			} else {
-				transform.Rotate (-Vector3.forward * speed * Time.deltaTime);
+
+			//Debug.Log (transform.localEulerAngles.z);
+			if (transform.localEulerAngles.z < 90) {
+				transform.Rotate (new Vector3 (0, 0, currentZ/180) * speed / 2 * Time.deltaTime);
+			} else if (transform.localEulerAngles.z >90) {
+				transform.Rotate (new Vector3 (0, 0, currentZ/180) * -speed / 2 * Time.deltaTime);
 			}
+
+
 		}
-		*/
+
 
 		if (Input.GetKey (KeyCode.A)){
 			transform.Rotate (-Vector3.forward * speed * Time.deltaTime);
+			currentZ = transform.localEulerAngles.z; 
+			lastKey = "A";
+			//Debug.Log (currentZ);
 		}else if (Input.GetKey (KeyCode.D)){
 			transform.Rotate (Vector3.forward * speed * Time.deltaTime);
+			currentZ = transform.localEulerAngles.z; 
+			lastKey = "D";
 		}
 			
 	}
