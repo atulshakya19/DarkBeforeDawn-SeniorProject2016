@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour {
 
     //How long should the bullet live
     public float BulletHalfLife;
+	public int damage = 2;
 
     // Has the spawning started
     private bool _started;

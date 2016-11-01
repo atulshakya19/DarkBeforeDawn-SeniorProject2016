@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour {
 
 	public void HandleButton(string button_name){
-		Application.LoadLevel (1);
+		SceneManager.LoadScene (0);
 		}
 }
 	

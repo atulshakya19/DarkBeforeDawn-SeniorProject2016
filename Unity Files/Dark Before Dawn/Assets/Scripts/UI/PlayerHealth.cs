@@ -1,29 +1,35 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public int fullHealth = 100;
-	public int currentHealth;
+	public float fullHealth = 100;
+	public float currentHealth;
 	public Slider healthBar;
 
 	bool damaged;
-	bool isDead;
+
 
 	// Use this for initialization
 	void Awake () {
 
 		currentHealth = fullHealth;	
+		enemyAi.isDead = false;
 
 	}
 	
 	// Update is called once per frame
 	void Update (){
+		if (currentHealth < 0) 
+		{
+			Destroy(gameObject);
+		}
 	
 	}
 
-	public void TakeDamage(int amount){
+	public void isDamaged(int amount){
 
 		damaged = true;
 
@@ -31,7 +37,7 @@ public class PlayerHealth : MonoBehaviour {
 
 		healthBar.value = currentHealth;
 
-		if (currentHealth <= 0 && !isDead) {
+		if (currentHealth <= 0 && !enemyAi.isDead) {
 			Death ();
 		}
 
@@ -39,7 +45,12 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Death(){
 
-		isDead = true;
+		enemyAi.isDead = true;
 
+	}
+
+	public void RestartLevel()
+	{
+		SceneManager.LoadScene (0);
 	}
 }

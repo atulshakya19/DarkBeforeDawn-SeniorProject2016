@@ -17,6 +17,7 @@ TagManager:
   - Gem 3
   - Wall Jump
   - Hook
+  - Bullet
   layers:
   - Default
   - TransparentFX

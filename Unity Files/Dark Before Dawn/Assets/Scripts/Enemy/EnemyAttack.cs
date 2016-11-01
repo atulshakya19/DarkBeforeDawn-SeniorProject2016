@@ -1,15 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAttack : MonoBehaviour {
+public class EnemyAttack : MonoBehaviour 
+{
+	public float timeBetweenAttacks = 0.5f;
+	public GameObject player;
+	public int attackDamage = 10;
 
-	// Use this for initialization
-	void Start () {
-	
+	PlayerHealth playerHealth;
+	EnemyHealthBar enemyHealthBar;
+	bool lOS;
+	float timer;
+
+	void Awake ()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+		playerHealth = player.GetComponent <PlayerHealth> ();
+		enemyHealthBar = gameObject.GetComponent<EnemyHealthBar>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void OnTriggerEnter (Collider other)
+	{
+		if(other.gameObject.tag == "Player")
+		{
+			lOS = true;
+		}
+	}
+
+
+	void OnTriggerExit (Collider other)
+	{
+		if(other.gameObject.tag == "Player")
+		{
+			lOS = false;
+		}
+	}
+
+	void Update ()
+	{
+		timer += Time.deltaTime;
+		if(timer >= timeBetweenAttacks && lOS && enemyHealthBar.currentHealth > 0)
+		{
+			Attack ();
+		}
+	}
+
+
+	void Attack ()
+	{
+		timer = 0f;
+		if(playerHealth.currentHealth > 0)
+		{
+			playerHealth.isDamaged (attackDamage);
+		}
 	}
 }

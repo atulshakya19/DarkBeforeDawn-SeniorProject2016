@@ -27,8 +27,8 @@ public class MovementAI : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision col){
-		if (col.transform.tag == "Player") {
-			Destroy (gameObject);
+		if (col.transform.tag == "Bullet") {
+			gameObject.GetComponent<EnemyHealthBar>().currentHealth -= gameObject.GetComponent<Bullet> ().damage;
 		} 
 	}
 		
