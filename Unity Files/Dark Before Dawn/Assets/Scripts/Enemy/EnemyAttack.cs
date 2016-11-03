@@ -19,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
 		enemyHealthBar = gameObject.GetComponent<EnemyHealthBar>();
 	}
 
-	void OnTriggerEnter (Collider other)
+	void OnCollisionEnter (Collision other)
 	{
 		if(other.gameObject.tag == "Player")
 		{
@@ -28,7 +28,7 @@ public class EnemyAttack : MonoBehaviour
 	}
 
 
-	void OnTriggerExit (Collider other)
+	void OnCollisionExit (Collision other)
 	{
 		if(other.gameObject.tag == "Player")
 		{

@@ -9,6 +9,8 @@ public class BulletAI : MonoBehaviour {
 	private GameObject player;
 	public float speed = 0.10f;
 
+	private Vector3 playerPosition;
+
     // Has the spawning started
     private bool _started;
 
@@ -17,6 +19,7 @@ public class BulletAI : MonoBehaviour {
 	void Start ()
     {
 		player = GameObject.FindGameObjectWithTag ("Player");
+		playerPosition = player.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -37,9 +40,9 @@ public class BulletAI : MonoBehaviour {
 
     void Move()
     {
-			Vector3 direction = (player.transform.position - transform.position).normalized;
-			float distance = (player.transform.position - transform.position).magnitude;
-			Vector3 move = transform.position + (direction * speed/2);
+			Vector3 direction = (playerPosition - transform.position).normalized;
+			float distance = (playerPosition - transform.position).magnitude;
+			Vector3 move = transform.position + (direction * speed);
 			transform.position = move;
     }
 
@@ -53,6 +56,7 @@ public class BulletAI : MonoBehaviour {
         if (other.transform.tag == "Enemy")
         {
             Destroy(this.gameObject);
+			EnemyShoot.bulletNum -= 1;
         }
     }
 
@@ -69,6 +73,7 @@ public class BulletAI : MonoBehaviour {
         //Destry the target
        
         Destroy(this.gameObject);
+		EnemyShoot.bulletNum -= 1;
     }
 
 }

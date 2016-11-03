@@ -14,6 +14,8 @@ public class RopeScript1: MonoBehaviour {
 	public float distance = 1;
 
 	public GameObject Player;
+	private Vector3 _direction;
+	private MovementScript _playerMove;
 
 	public bool _touch = false;
 
@@ -27,6 +29,13 @@ public class RopeScript1: MonoBehaviour {
 		_throwhook = GetComponent<throwhook> ();
 
 		Player = GameObject.FindGameObjectWithTag ("Player");
+		_playerMove = Player.GetComponent<MovementScript> ();
+
+		if (_playerMove.facingRight) {
+			_direction = Vector3.right;
+		}  else if (_playerMove.facingRight == false) {
+			_direction = Vector3.left;
+		}
 
 	}
 
@@ -40,6 +49,7 @@ public class RopeScript1: MonoBehaviour {
 		}
 		*/
 
+
 		if (!_touch) {
 			
 			Move ();
@@ -49,7 +59,7 @@ public class RopeScript1: MonoBehaviour {
 
 
 	void Move (){
-		transform.Translate(Vector3.right * Time.deltaTime * 25f);
+		transform.Translate(_direction * Time.deltaTime * 25f);
 	}
 
 	void OnTriggerEnter (Collider col){
@@ -69,7 +79,6 @@ public class RopeScript1: MonoBehaviour {
 
 		//Destry the target
 		Destroy(gameObject);
-
 	}
 
 }

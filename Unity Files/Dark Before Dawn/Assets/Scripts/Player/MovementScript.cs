@@ -9,7 +9,7 @@ public class MovementScript : MonoBehaviour {
 	public float jumpPushForce = 10f;
 	public float jumpForce = 700f;
 	Vector3 playerMove;
-
+	Vector3 playerJump;
 	bool isGrounded = false;
 	bool inAir = false;
 	public bool doubleJump = false;
@@ -32,11 +32,11 @@ public class MovementScript : MonoBehaviour {
 		} else if (playerMove.x < 0 && facingRight) {
 			Flip ();
 		}
-
-		if (Input.GetButtonDown ("Vertical")) {
+			
+		if (Input.GetButtonDown ("Vertical") && Input.GetAxis ("Vertical") > 0) {
 			rigidBody.AddForce (new Vector3 (0f, jumpHeight, 0), ForceMode.Impulse);
 			inAir = true;
-		} else if (Input.GetButtonDown ("Vertical") && inAir && doubleJump) {
+		} else if (Input.GetButtonDown ("Vertical") && inAir && doubleJump ) {
 			rigidBody.AddForce (new Vector3 (0f, jumpHeight, 0), ForceMode.Impulse);
 			inAir = false;
 		}

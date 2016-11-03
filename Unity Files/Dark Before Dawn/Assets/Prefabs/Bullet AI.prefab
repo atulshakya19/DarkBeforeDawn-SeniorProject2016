@@ -22,7 +22,8 @@ GameObject:
   - 33: {fileID: 33000014200361222}
   - 135: {fileID: 135000013846280928}
   - 23: {fileID: 23000013224012392}
-  - 114: {fileID: 114000014283491104}
+  - 114: {fileID: 114000011682797332}
+  - 114: {fileID: 114000010748845956}
   m_Layer: 0
   m_Name: Bullet AI
   m_TagString: Bullet AI
@@ -79,7 +80,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013648784710}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114000014283491104
+--- !u!114 &114000010748845956
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -87,11 +88,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013648784710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2270dfe6a42f73a4db2b2bdf25f05b8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fad976434004ad4884b3713c5502ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletHalfLife: 2
+  timeBetweenAttacks: 0.5
+  player: {fileID: 0}
+  attackDamage: 10
+--- !u!114 &114000011682797332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013648784710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc27c143b809114a9edef11743879c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletHalfLife: 1
   damage: 2
+  speed: 0.1
 --- !u!135 &135000013846280928
 SphereCollider:
   m_ObjectHideFlags: 1

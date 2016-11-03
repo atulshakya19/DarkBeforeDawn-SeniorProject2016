@@ -11,6 +11,14 @@ public class FireBall : MonoBehaviour
     public GameObject BulletPoint;
 
     //Spam the bullet
+	void Update ()
+	{
+		if (Input.GetMouseButtonDown(0))
+		{
+			FireBullet();
+		}
+
+	}
 
    public void FireBullet()
     {

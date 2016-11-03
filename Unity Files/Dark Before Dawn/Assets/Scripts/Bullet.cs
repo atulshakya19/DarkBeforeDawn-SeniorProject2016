@@ -9,12 +9,22 @@ public class Bullet : MonoBehaviour {
 
     // Has the spawning started
     private bool _started;
-
+	private Vector3 _direction;
+	private GameObject _player;
+	private MovementScript _playerMove;
 
 	// Use this for initialization
 	void Start ()
     {
-	
+		_player = GameObject.FindGameObjectWithTag("Player");
+		_playerMove = _player.GetComponent<MovementScript> ();
+
+		if (_playerMove.facingRight) {
+			_direction = Vector3.right;
+		}  else if (_playerMove.facingRight == false) {
+			_direction = Vector3.left;
+		}
+			
 	}
 	
 	// Update is called once per frame
@@ -35,7 +45,7 @@ public class Bullet : MonoBehaviour {
 
     void Move()
     {
-		transform.Translate(Vector3.right * Time.deltaTime * 25f);
+			transform.Translate (_direction * Time.deltaTime * 25f);
     }
 
     public void MoveToCursor(Vector3 targetPos)

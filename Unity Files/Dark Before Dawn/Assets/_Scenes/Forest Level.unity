@@ -4980,26 +4980,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010634283374, guid: 2bd3ba683ac57424e8b6bc6f455dcc63,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012388754726, guid: 2bd3ba683ac57424e8b6bc6f455dcc63,
-        type: 2}
-      propertyPath: jumpHeight
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012388754726, guid: 2bd3ba683ac57424e8b6bc6f455dcc63,
-        type: 2}
-      propertyPath: doubleJump
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000012388754726, guid: 2bd3ba683ac57424e8b6bc6f455dcc63,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bd3ba683ac57424e8b6bc6f455dcc63, type: 2}
   m_IsPrefabParent: 0
