@@ -26,6 +26,7 @@ TagManager:
   - Teleport1e
   - Teleport1f
   - Teleport1g
+  - SlowBulletEnemy
   layers:
   - Default
   - TransparentFX

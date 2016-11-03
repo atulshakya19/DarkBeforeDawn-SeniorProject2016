@@ -4,9 +4,10 @@ using System.Collections;
 
 public class BulletAI : MonoBehaviour {
 
+	PlayerHealth playerHealth;
     //How long should the bullet live
     public float BulletHalfLife;
-	public int damage = 2;
+	public int bulletDamage = 2;
 	private GameObject player;
 	public float speed = 0.10f;
 
@@ -20,7 +21,7 @@ public class BulletAI : MonoBehaviour {
 	void Start ()
     {
 		player = GameObject.FindGameObjectWithTag ("Player");
-
+		playerHealth = player.GetComponent <PlayerHealth> ();
 		playerPosition = player.transform.position;
 	}
 	
@@ -53,19 +54,21 @@ public class BulletAI : MonoBehaviour {
         transform.Translate(targetPos * Time.deltaTime * 25f);
     }
 
-    void OnTriggerEnter (Collider other)
+   /* void OnTriggerEnter (Collider other)
     {
         if (other.transform.tag == "Player")
         {
-            Destroy(this.gameObject);
-			EnemyShoot.bulletNum -= 1;
+            
         }
-    }
+    }*/
 
-	void OnCollision(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
 		if (other.transform.tag == "Player") {
-			
+			print ("HITO");
+			Attack ();
+			Destroy(this.gameObject);
+			EnemyShoot.bulletNum -= 1;
 		}
 	}
 
@@ -84,4 +87,11 @@ public class BulletAI : MonoBehaviour {
 		EnemyShoot.bulletNum -= 1;
     }
 
+	void Attack ()
+	{
+		if(playerHealth.currentHealth > 0)
+		{
+			playerHealth.isDamaged (bulletDamage);
+		}
+	}
 }

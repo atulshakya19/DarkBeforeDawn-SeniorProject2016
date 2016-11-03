@@ -4,8 +4,11 @@ using System.Collections;
 
 public class SlowBullet : MonoBehaviour {
 
+	MovementScript moveSpeed;
+	PlayerHealth playerHealth;
+
 	public float BulletHalfLife;
-	public int damage = 2;
+	public int bulletDamage = 2;
 	private GameObject player;
 	public float speed = 0.10f;
 
@@ -21,8 +24,8 @@ public class SlowBullet : MonoBehaviour {
 	void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
-		//_playerHealth = player.GetComponent<PlayerHealth> ().currentHealth;
-		//_playerSpeed = player.GetComponent<MovementScript> ().moveSpeed;
+		moveSpeed = player.GetComponent<MovementScript> ();
+		playerHealth = player.GetComponent <PlayerHealth> ();
 		playerPosition = player.transform.position;
 	}
 
@@ -55,23 +58,24 @@ public class SlowBullet : MonoBehaviour {
 		transform.Translate(targetPos * Time.deltaTime * 25f);
 	}
 
-	void OnTriggerEnter (Collider other)
+	/*void OnTriggerEnter (Collider other)
 	{
 		if (other.transform.tag == "Player")
 		{
-			Destroy(this.gameObject);
-			EnemyShoot.bulletNum -= 1;
+			
 		}
-	}
+	}*/
 
-	void OnCollision(Collider other)
+	void OnCollisionEnter(Collision other)
 	{
 		if (other.transform.tag == "Player") {
-			//_playerHealth - damage;
+			print ("hit/slow");
+			moveSpeed.isSlowed (true);
+			playerHealth.isDamaged (bulletDamage);
+			Destroy (this.gameObject);
+			EnemyShoot.bulletNum -= 1;
 		}
-		if (other.transform.tag == "Player") {
-			//_playerSpeed = 0;
-		}
+
 	}
 
 	// Kill the bullet after bulletHalfLife
@@ -90,4 +94,12 @@ public class SlowBullet : MonoBehaviour {
 		EnemyShoot.bulletNum -= 1;
 	}
 
+
+	void Attack ()
+	{
+		if(playerHealth.currentHealth > 0)
+		{
+			playerHealth.isDamaged (bulletDamage);
+		}
+	}
 }

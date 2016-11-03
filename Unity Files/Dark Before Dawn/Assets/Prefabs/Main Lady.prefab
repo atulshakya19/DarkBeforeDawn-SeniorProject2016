@@ -48,6 +48,7 @@ GameObject:
   - 114: {fileID: 114000014014133544}
   - 120: {fileID: 120000011894833606}
   - 114: {fileID: 114000013946136812}
+  - 114: {fileID: 114000012366270770}
   m_Layer: 0
   m_Name: Main Lady
   m_TagString: Player
@@ -250,6 +251,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114000012366270770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010235115202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5837ee91818827d468cd5012e3956997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a2: {fileID: 0}
+  b2: {fileID: 0}
+  c2: {fileID: 0}
+  d2: {fileID: 0}
+  e2: {fileID: 0}
+  f2: {fileID: 0}
+  g2: {fileID: 0}
 --- !u!114 &114000012388754726
 MonoBehaviour:
   m_ObjectHideFlags: 1

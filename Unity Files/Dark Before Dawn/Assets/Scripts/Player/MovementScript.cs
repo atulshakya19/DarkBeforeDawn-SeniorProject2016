@@ -16,7 +16,6 @@ public class MovementScript : MonoBehaviour {
 	public bool touchingWall = false;
 	public bool facingRight = true; // bool to see which direction the player is facing
 
-
 	// Use this for initialization
 	void Start () {
 		rigidBody = transform.GetComponent<Rigidbody> ();
@@ -69,6 +68,16 @@ public class MovementScript : MonoBehaviour {
 			//rigidBody.rotation = Quaternion.RotateTowards(rigidBody.rotation, newRotation,turnSpeed * Time.deltaTime);
 	}
 		
+	public void isSlowed(bool isSlow = false){
+		if (isSlow = true) {
+			moveSpeed = 0;
+			isSlow = false;
+		}else{
+			//Input.GetButtonDown ("Horizontal") && Input.GetAxis ("Horizontal");
+			moveSpeed = 8;
+		}
+
+	}
 
 	void OnCollisionEnter (Collision col){
 

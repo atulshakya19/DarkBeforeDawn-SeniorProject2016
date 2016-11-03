@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Teleport : MonoBehaviour {
 	public Transform a2;
@@ -11,10 +12,11 @@ public class Teleport : MonoBehaviour {
 	public Transform g2;
 
 
-	void Update(){
+	void OnAwake(){
+		
 
 	}
-
+		
 	void OnTriggerEnter(Collider col){
 		if (col.gameObject.tag == "Teleport1a") {
 			this.transform.position = a2.position;

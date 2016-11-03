@@ -9,43 +9,45 @@ public class PlayerHealth : MonoBehaviour {
 	public float currentHealth;
 	public Slider healthBar;
 
-	bool damaged;
+	bool damaged = false;
+	bool isDead = false;
 
 
 	// Use this for initialization
 	void Awake () {
 
 		currentHealth = fullHealth;	
-		enemyAi.isDead = false;
+		isDead = false;
+		damaged = false;
 
 	}
 	
 	// Update is called once per frame
 	void Update (){
-		if (currentHealth < 0) 
-		{
-			Destroy(gameObject);
-		}
-	
+		Death ();
 	}
 
 	public void isDamaged(int amount){
 
-		damaged = true;
+		if (damaged == true) {
 
-		currentHealth -= amount;
+			currentHealth -= amount;
 
-		healthBar.value = currentHealth;
+			healthBar.value = currentHealth;
 
-		if (currentHealth <= 0 && !enemyAi.isDead) {
-			Death ();
+			if (currentHealth <= 0) {
+				Death ();
+			}
 		}
 
 	}
 
 	void Death(){
-
-
+		if (isDead == true) {
+			Destroy (this.gameObject);
+		
+			RestartLevel ();
+		}
 
 	}
 

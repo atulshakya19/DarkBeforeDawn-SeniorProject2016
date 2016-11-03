@@ -9,15 +9,15 @@ public class EnemyHealthBar : MonoBehaviour
 	public int currentHealth;
 	public Slider healthBar;
 
-	bool damaged;
-	bool isDead;
+	bool damaged = false;
+	bool isDead = false;
 
 	// Use this for initialization
 	void Awake () 
 	{
 		currentHealth = fullHealth;
 		isDead = false;
-	
+		damaged = false;
 	}
 
 	void OnCollision (Collider col)
@@ -30,26 +30,28 @@ public class EnemyHealthBar : MonoBehaviour
 
 	public void isDamaged(int amount)
 	{
-		damaged = true;
+		if (damaged == true) {
 
-		currentHealth -= amount;
-
+			currentHealth -= amount;
+		}
 		healthBar.value = currentHealth;
 		if(currentHealth <= 0)
 		{
-			Death ();
+			isDead = true;
 		}
 	}
 
 	void Death ()
 	{
-		isDead = true;
-		Destroy (this.gameObject);
+		if (isDead == true) {
+			Destroy (this.gameObject);
+		}
 	}
 
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
-	
+		Death ();
+		//isDamaged ();
 	}
 }

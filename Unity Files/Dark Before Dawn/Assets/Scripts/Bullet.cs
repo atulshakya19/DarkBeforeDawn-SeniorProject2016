@@ -58,18 +58,12 @@ public class Bullet : MonoBehaviour {
         transform.Translate(targetPos * Time.deltaTime * 25f);
     }
 
-    void OnTriggerEnter (Collider other)
-    {
-        if (other.transform.tag == "Enemy")
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-	void OnCollision(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.transform.tag == "Enemy") {
-			//gameObject.GetComponent<EnemyHealthBar> ().fullHealth - damage;
+			print ("HIT!!!");
+			_enemyHealth.isDamaged(damage);
+			Destroy(this.gameObject);
 		}
 	}
     // Kill the bullet after bulletHalfLife
