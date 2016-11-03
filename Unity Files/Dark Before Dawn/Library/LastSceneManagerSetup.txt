@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Rope Swing.unity
+- path: Assets/2D/_Scene/Level Prototype 2D.unity
   isLoaded: 1
   isActive: 1
