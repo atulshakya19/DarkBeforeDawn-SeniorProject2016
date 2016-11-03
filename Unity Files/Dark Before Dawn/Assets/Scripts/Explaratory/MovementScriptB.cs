@@ -10,7 +10,7 @@ public class MovementScriptB: MonoBehaviour {
 	private string lastKey;
 	public float speed = 100f;
 
-	public float currentZ;
+	private float currentZ;
 
 
 	// Use this for initialization
@@ -25,12 +25,13 @@ public class MovementScriptB: MonoBehaviour {
 		
 		if (_rope._touch) {
 
-			//Debug.Log (transform.localEulerAngles.z);
-			if (transform.localEulerAngles.z < 90) {
-				transform.Rotate (new Vector3 (0, 0, currentZ/180) * speed / 2 * Time.deltaTime);
-			} else if (transform.localEulerAngles.z >90) {
-				transform.Rotate (new Vector3 (0, 0, currentZ/180) * -speed / 2 * Time.deltaTime);
-			}
+			if (transform.localEulerAngles.z > 0 && transform.localEulerAngles.z < 180) {
+				//Debug.Log (transform.localEulerAngles.z);
+				transform.Rotate (new Vector3 (0, 0, currentZ / 180) * speed / 2 * Time.deltaTime);
+			} else if (transform.localEulerAngles.z < 0 && transform.localEulerAngles.z >180) {
+				//Debug.Log ("180");
+				transform.Rotate (new Vector3 (0, 0, -currentZ / 180) * speed / 2 * Time.deltaTime);
+			} 
 
 
 		}
@@ -38,13 +39,12 @@ public class MovementScriptB: MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.A)){
 			transform.Rotate (-Vector3.forward * speed * Time.deltaTime);
-			currentZ = transform.localEulerAngles.z; 
-			lastKey = "A";
-			//Debug.Log (currentZ);
+			currentZ = transform.localEulerAngles.z;
+			currentZ *= 1;
 		}else if (Input.GetKey (KeyCode.D)){
 			transform.Rotate (Vector3.forward * speed * Time.deltaTime);
 			currentZ = transform.localEulerAngles.z; 
-			lastKey = "D";
+			currentZ *= -1;
 		}
 			
 	}
