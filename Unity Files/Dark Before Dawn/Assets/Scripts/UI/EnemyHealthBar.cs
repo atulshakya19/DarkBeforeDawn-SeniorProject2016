@@ -20,21 +20,14 @@ public class EnemyHealthBar : MonoBehaviour
 		damaged = false;
 	}
 
-	void OnCollision (Collider col)
-	{
-		if(col.gameObject.tag == "Bullet")
-		{
-			currentHealth -= gameObject.GetComponent<Bullet>().damage;
-		}
-	}
-
 	public void isDamaged(int amount)
 	{
 		if (damaged == true) {
 
 			currentHealth -= amount;
+		
+			healthBar.value = currentHealth;
 		}
-		healthBar.value = currentHealth;
 		if(currentHealth <= 0)
 		{
 			isDead = true;
@@ -49,9 +42,8 @@ public class EnemyHealthBar : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () 
+	void Update () 
 	{
 		Death ();
-		//isDamaged ();
 	}
 }

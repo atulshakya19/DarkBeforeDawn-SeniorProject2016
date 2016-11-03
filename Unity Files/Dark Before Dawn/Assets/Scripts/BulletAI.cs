@@ -4,7 +4,7 @@ using System.Collections;
 
 public class BulletAI : MonoBehaviour {
 
-	PlayerHealth playerHealth;
+	public float timeBetweenAttacks = 0.5f;
     //How long should the bullet live
     public float BulletHalfLife;
 	public int bulletDamage = 2;
@@ -16,15 +16,12 @@ public class BulletAI : MonoBehaviour {
     // Has the spawning started
     private bool _started;
 
-
 	// Use this for initialization
 	void Start ()
-    {
-		player = GameObject.FindGameObjectWithTag ("Player");
-		playerHealth = player.GetComponent <PlayerHealth> ();
+	{
 		playerPosition = player.transform.position;
 	}
-	
+		
 	// Update is called once per frame
 	void Update ()
     {
@@ -36,7 +33,6 @@ public class BulletAI : MonoBehaviour {
         }
 
         Move();
-
 	}
 
     //Move the bullet
@@ -66,7 +62,6 @@ public class BulletAI : MonoBehaviour {
 	{
 		if (other.transform.tag == "Player") {
 			print ("HITO");
-			Attack ();
 			Destroy(this.gameObject);
 			EnemyShoot.bulletNum -= 1;
 		}
@@ -86,12 +81,4 @@ public class BulletAI : MonoBehaviour {
         Destroy(this.gameObject);
 		EnemyShoot.bulletNum -= 1;
     }
-
-	void Attack ()
-	{
-		if(playerHealth.currentHealth > 0)
-		{
-			playerHealth.isDamaged (bulletDamage);
-		}
-	}
 }

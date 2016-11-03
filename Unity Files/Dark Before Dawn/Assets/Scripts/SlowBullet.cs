@@ -5,7 +5,6 @@ using System.Collections;
 public class SlowBullet : MonoBehaviour {
 
 	MovementScript moveSpeed;
-	PlayerHealth playerHealth;
 
 	public float BulletHalfLife;
 	public int bulletDamage = 2;
@@ -25,7 +24,7 @@ public class SlowBullet : MonoBehaviour {
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 		moveSpeed = player.GetComponent<MovementScript> ();
-		playerHealth = player.GetComponent <PlayerHealth> ();
+		_playerHealth = player.GetComponent <PlayerHealth> ();
 		playerPosition = player.transform.position;
 	}
 
@@ -40,7 +39,6 @@ public class SlowBullet : MonoBehaviour {
 		}
 
 		Move();
-
 	}
 
 	//Move the bullet
@@ -70,8 +68,6 @@ public class SlowBullet : MonoBehaviour {
 	{
 		if (other.transform.tag == "Player") {
 			print ("hit/slow");
-			moveSpeed.isSlowed (true);
-			playerHealth.isDamaged (bulletDamage);
 			Destroy (this.gameObject);
 			EnemyShoot.bulletNum -= 1;
 		}
@@ -92,14 +88,5 @@ public class SlowBullet : MonoBehaviour {
 
 		Destroy(this.gameObject);
 		EnemyShoot.bulletNum -= 1;
-	}
-
-
-	void Attack ()
-	{
-		if(playerHealth.currentHealth > 0)
-		{
-			playerHealth.isDamaged (bulletDamage);
-		}
 	}
 }

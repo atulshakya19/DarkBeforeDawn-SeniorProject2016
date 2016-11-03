@@ -25,12 +25,6 @@ public class MovementAI : MonoBehaviour {
 			AISpeed *= -1;
 		}
 	}
-
-	void OnCollisionEnter (Collision col){
-		if (col.transform.tag == "Bullet") {
-			gameObject.GetComponent<EnemyHealthBar>().currentHealth -= gameObject.GetComponent<Bullet> ().damage;
-		} 
-	}
 		
 	public void ChasePlayer(){
 		Vector3 direction = (player.transform.position - transform.position).normalized;

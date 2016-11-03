@@ -15,6 +15,11 @@ public class Bullet : MonoBehaviour {
 	private GameObject _player;
 	private MovementScript _playerMove;
 	private EnemyHealthBar _enemyHealth;
+	private PlayerHealth _playerHealth;
+
+	bool lOS = false;
+	float timer;
+	public float timeBetweenAttacks = 0.5f;
 
 	// Use this for initialization
 	void Start ()
@@ -43,7 +48,6 @@ public class Bullet : MonoBehaviour {
         }
 
         Move();
-
 	}
 
     //Move the bullet
@@ -62,7 +66,7 @@ public class Bullet : MonoBehaviour {
 	{
 		if (other.transform.tag == "Enemy") {
 			print ("HIT!!!");
-			_enemyHealth.isDamaged(damage);
+			lOS = true;
 			Destroy(this.gameObject);
 		}
 	}
@@ -80,5 +84,4 @@ public class Bullet : MonoBehaviour {
        
         Destroy(this.gameObject);
     }
-
 }
