@@ -20,9 +20,9 @@ public class EnemyHealthBar : MonoBehaviour
 	
 	}
 
-	void OnCollision (Collider collision)
+	void OnCollision (Collider col)
 	{
-		if(collision.gameObject.tag == "Bullet")
+		if(col.gameObject.tag == "Bullet")
 		{
 			currentHealth -= gameObject.GetComponent<Bullet>().damage;
 		}

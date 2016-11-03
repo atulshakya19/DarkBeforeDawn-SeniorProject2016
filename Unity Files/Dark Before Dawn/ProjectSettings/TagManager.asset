@@ -19,6 +19,13 @@ TagManager:
   - Hook
   - Bullet
   - Bullet AI
+  - Teleport1a
+  - Teleport1b
+  - Teleport1c
+  - Teleport1d
+  - Teleport1e
+  - Teleport1f
+  - Teleport1g
   layers:
   - Default
   - TransparentFX

@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc27c143b809114a9edef11743879c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletHalfLife: 1
+  BulletHalfLife: 1.5
   damage: 2
   speed: 0.1
 --- !u!135 &135000013846280928

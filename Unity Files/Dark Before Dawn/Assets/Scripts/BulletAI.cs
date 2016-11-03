@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class BulletAI : MonoBehaviour {
@@ -19,6 +20,7 @@ public class BulletAI : MonoBehaviour {
 	void Start ()
     {
 		player = GameObject.FindGameObjectWithTag ("Player");
+
 		playerPosition = player.transform.position;
 	}
 	
@@ -53,15 +55,21 @@ public class BulletAI : MonoBehaviour {
 
     void OnTriggerEnter (Collider other)
     {
-        if (other.transform.tag == "Enemy")
+        if (other.transform.tag == "Player")
         {
             Destroy(this.gameObject);
 			EnemyShoot.bulletNum -= 1;
         }
     }
 
-    // Kill the bullet after bulletHalfLife
+	void OnCollision(Collider other)
+	{
+		if (other.transform.tag == "Player") {
+			
+		}
+	}
 
+    // Kill the bullet after bulletHalfLife
     IEnumerator TimeToDie()
     {
         //Indicate that is has started

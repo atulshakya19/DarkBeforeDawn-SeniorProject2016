@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour {
 
@@ -10,12 +11,16 @@ public class Bullet : MonoBehaviour {
     // Has the spawning started
     private bool _started;
 	private Vector3 _direction;
+	private GameObject _enemy;
 	private GameObject _player;
 	private MovementScript _playerMove;
+	private EnemyHealthBar _enemyHealth;
 
 	// Use this for initialization
 	void Start ()
     {
+		_enemy = GameObject.FindGameObjectWithTag ("Enemy");
+		_enemyHealth = _enemy.GetComponent<EnemyHealthBar> ();
 		_player = GameObject.FindGameObjectWithTag("Player");
 		_playerMove = _player.GetComponent<MovementScript> ();
 
@@ -61,6 +66,12 @@ public class Bullet : MonoBehaviour {
         }
     }
 
+	void OnCollision(Collider other)
+	{
+		if (other.transform.tag == "Enemy") {
+			//gameObject.GetComponent<EnemyHealthBar> ().fullHealth - damage;
+		}
+	}
     // Kill the bullet after bulletHalfLife
 
     IEnumerator TimeToDie()
