@@ -1624,6 +1624,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD:Unity Files/Dark Before Dawn/Assets/_Scenes/Level Test.unity
   m_RootOrder: 7
 --- !u!1001 &1194623843
 Prefab:
@@ -1672,6 +1673,10 @@ Prefab:
   m_ParentPrefab: {fileID: 100100000, guid: b76b321cc6eac0042af2a0c473c79c73, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1246622954
+=======
+  m_RootOrder: 14
+--- !u!1 &1146634416
+>>>>>>> 9f65b3fad90fd8b347686b9faa581d2348b7663b:Unity Files/Dark Before Dawn/Assets/3D/_Scenes/Level Test.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
