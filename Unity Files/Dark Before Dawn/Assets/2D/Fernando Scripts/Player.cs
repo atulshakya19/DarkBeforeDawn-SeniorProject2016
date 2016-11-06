@@ -8,18 +8,22 @@ public class Player : MonoBehaviour {
 	Controller2D controller;
 	Vector3 velocity;
 	float gravity;
-	float moveSpeed = 6;
 	float jumpVelocity;
+	float accelAir = .2f;
+	float accelGround = .1f;
+	float velocityXSmooth;
 
-	float jumpHeight = 5;
-	float timeToApex = 0.3f;
+	public float moveSpeed = 6;
+	public float jumpHeight = 5;
+	public float timeToApex = 0.3f;
 
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<Controller2D> ();
 
-		gravity = (2 * jumpHeight) / Mathf.Pow (timeToApex, 2);
+		gravity = -(2 * jumpHeight) / Mathf.Pow (timeToApex, 2);
 		jumpVelocity = Mathf.Abs(gravity) * timeToApex;
+		print ("Gravity" + gravity + " Jump Velocity: " + jumpVelocity);
 	}
 		
 	// Update is called once per frame
@@ -28,14 +32,14 @@ public class Player : MonoBehaviour {
 			velocity.y = 0;
 		}
 
-		if(Input.GetKeyDown(KeyCode.UpArrow))
-			{
+		if(Input.GetKeyDown(KeyCode.UpArrow) && controller.collisions.below)
+		{
 			velocity.y = jumpVelocity;
-
 		}
 		Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-		velocity.x = input.x * moveSpeed;
+		float TargetVelocityX = input.x * moveSpeed;
+		velocity.x = Mathf.SmoothDamp (velocity.x, TargetVelocityX, ref velocityXSmooth, (controller.collisions.below)?accelGround:accelAir);
 		velocity.y += gravity * Time.deltaTime;
 		controller.Move (velocity * Time.deltaTime);
 	}
