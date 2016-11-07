@@ -35,7 +35,7 @@ public class throwhook : MonoBehaviour {
 			ropeActive = false;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.UpArrow)) {
 			if (ropeActive == false && GemActive == "Gem 1") {
 				curHook = (GameObject)Instantiate (hook, hookPoint.transform.position, hookPoint.transform.rotation);
 				ropeActive = true;

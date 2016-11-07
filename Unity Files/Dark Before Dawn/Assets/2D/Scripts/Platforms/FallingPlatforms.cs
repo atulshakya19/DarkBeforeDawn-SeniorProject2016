@@ -4,25 +4,13 @@ using System.Collections;
 public class FallingPlatforms : MonoBehaviour {
 
 	private Collider platformCol;
-	private Rigidbody rigidbody;
+	private Rigidbody2D rb2d;
 
 	//How long should the bullet live
 	public float platformTime =5f;
 
 	// Has the spawning started
 	private bool _started;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-
-	
-	}
 
 	void OnCollisionEnter (Collision col){
 		if (col.transform.tag == "Player") {
@@ -32,7 +20,7 @@ public class FallingPlatforms : MonoBehaviour {
 			}
 
 
-			rigidbody.freezeRotation = true;
+			rb2d.freezeRotation = true;
 		}
 	}
 
@@ -45,7 +33,7 @@ public class FallingPlatforms : MonoBehaviour {
 		yield return new WaitForSeconds(platformTime);
 
 		//Destry the target
-		rigidbody = gameObject.AddComponent<Rigidbody> ();
+		rb2d = gameObject.AddComponent<Rigidbody2D> ();
 	}
 
 }

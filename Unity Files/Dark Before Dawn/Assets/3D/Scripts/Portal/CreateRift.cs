@@ -40,7 +40,7 @@ public class CreateRift : MonoBehaviour {
 		}
 
 		if (!_riftThere && GemActive == "Gem 2") {
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				riftA = (GameObject)Instantiate (rift, _destiny, Quaternion.identity);
 				_riftThere = true;
 			}
@@ -49,7 +49,7 @@ public class CreateRift : MonoBehaviour {
 			_move.moveSpeed = 0;
 			_rigidbody.isKinematic = true;
 
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				transform.position = _destiny;
 				_move.moveSpeed = currentSpeed;
 				_enterRift = false;
@@ -57,7 +57,7 @@ public class CreateRift : MonoBehaviour {
 				_rigidbody.isKinematic = false;
 			}
 		} else if (_riftThere && GemActive == "Gem 2" ) {
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			if (Input.GetKeyDown (KeyCode.UpArrow)) {
 				Destroy (riftA);
 				_riftThere = false;
 			}

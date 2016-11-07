@@ -8,8 +8,8 @@ public class PlatformTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		colliderTrigger = GetComponent<BoxCollider> ();
-		platformCollider = transform.parent.GetComponent<BoxCollider> ();
+		//colliderTrigger = GetComponent<BoxCollider2D> ();
+		//platformCollider = transform.parent.GetComponent<BoxCollider2D> ();
 
 		colliderTrigger.isTrigger = true;
 	}
