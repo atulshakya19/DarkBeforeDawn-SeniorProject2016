@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Controller2D : RaycastController {
 
+	public int damage;
 	public float maxSlope = 80;
 
 	public CollisionInfo collisions;
@@ -13,7 +14,6 @@ public class Controller2D : RaycastController {
 	public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
-
 	}
 
 	public void Move(Vector2 moveAmount, bool standingOnPlatform) {
@@ -113,6 +113,7 @@ public class Controller2D : RaycastController {
 
 			if (hit) {
 				if (hit.collider.tag == "Through") {
+					print ("BOO!");
 					if (directionY == 1 || hit.distance == 0) {
 						continue;
 					}
@@ -126,6 +127,9 @@ public class Controller2D : RaycastController {
 					}
 				}
 
+				if (hit.collider.tag == "Trap") {
+					gameObject.GetComponent<PlayerHealth>().isDamaged (damage);
+				}
 				moveAmount.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
 

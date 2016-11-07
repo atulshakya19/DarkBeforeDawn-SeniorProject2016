@@ -27,6 +27,7 @@ TagManager:
   - Teleport1f
   - Teleport1g
   - SlowBulletEnemy
+  - Through
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - Player
   - Obstacle
   - Platforms
-  - 
+  - Traps
   - 
   - 
   - 
