@@ -25,6 +25,9 @@ public class Player : MonoBehaviour {
 	Vector3 velocity;
 	float velocityXSmoothing;
 
+	public float doubleJump = 5;
+	bool canDoubleJump;
+
 	Controller2D controller;
 
 	Vector2 directionalInput;
@@ -81,7 +84,11 @@ public class Player : MonoBehaviour {
 				}
 			} else {
 				velocity.y = maxJumpVelocity;
+				canDoubleJump = true;
 			}
+		} else if (canDoubleJump) {
+			canDoubleJump = false;
+			velocity.y = doubleJump;
 		}
 	}
 

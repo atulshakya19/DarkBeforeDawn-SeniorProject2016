@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerInput : MonoBehaviour {
 
 	Player player;
-	bool canDoubleJump;
+
 
 	void Start () {
 		player = GetComponent<Player> ();
@@ -16,10 +16,8 @@ public class PlayerInput : MonoBehaviour {
 		player.SetDirectionalInput (directionalInput);
 
 
-		if (Input.GetButton(KeyCode.UpArrow)) {
-			if (canDoubleJump) {
-				player.OnJumpInputDown ();
-			}
+		if (Input.GetKeyDown(KeyCode.UpArrow)) {
+			player.OnJumpInputDown ();
 		}
 		if (Input.GetKeyUp (KeyCode.UpArrow)) {
 			player.OnJumpInputUp ();
