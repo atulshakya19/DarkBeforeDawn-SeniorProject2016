@@ -51,7 +51,7 @@ public class EnemyAttack : MonoBehaviour
 		timer = 0f;
 		if(playerHealth.currentHealth > 0)
 		{
-			playerHealth.isDamaged (attackDamage);
+			playerHealth.isDamaged (attackDamage, timeBetweenAttacks);
 		}
 	}
 }
