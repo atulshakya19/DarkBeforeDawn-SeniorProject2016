@@ -20,16 +20,16 @@ public class throwhook1 : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+		/*
 		string GemActive = _gemActive.ActiveGem;
 
 		if (GemActive != "Gem 1") {
 			Destroy (curHook);
 			ropeActive = false;
 		}
-
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
-			if (ropeActive == false && GemActive == "Gem 1") {
+	*/
+		if (Input.GetMouseButtonDown(1)) {
+			if (ropeActive == false /*&& GemActive == "Gem 1"*/) {
 				curHook = (GameObject)Instantiate (hook, hookPoint.transform.position, hookPoint.transform.rotation);
 				ropeActive = true;
 			} else {

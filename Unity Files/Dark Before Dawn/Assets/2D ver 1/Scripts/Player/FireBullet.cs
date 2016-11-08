@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FireBall : MonoBehaviour
+public class FireBullet: MonoBehaviour
 {
 
     //spawn the bullet
@@ -15,12 +15,12 @@ public class FireBall : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			FireBullet();
+			Fire();
 		}
 
 	}
 
-   public void FireBullet()
+   public void Fire()
     {
         //instantiate the bullet
         var bullet = Instantiate(Bullet, BulletPoint.transform.position, BulletPoint.transform.rotation) as GameObject;
