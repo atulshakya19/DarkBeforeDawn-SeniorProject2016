@@ -13,6 +13,8 @@ public class Controller2D : RaycastController {
 	public int slowBullet;
 	public int slowTimer;
 
+	private GemPickup gemPickup = GameObject.FindObjectOfType<GemPickup>();
+
 	[HideInInspector]
 	public CollisionInfo collisions;
 	[HideInInspector]
@@ -73,6 +75,14 @@ public class Controller2D : RaycastController {
 
 				if (hit.distance == 0) {
 					continue;
+				}
+
+				if (hit.collider.tag == "Gem 1") {
+					gemPickup.Gem1 (); 
+				} else if (hit.collider.tag == "Gem 2") {
+					gemPickup.Gem2 (); 
+				}else if (hit.collider.tag == "Gem 3") {
+					gemPickup.Gem3 (); 
 				}
 
 				float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);

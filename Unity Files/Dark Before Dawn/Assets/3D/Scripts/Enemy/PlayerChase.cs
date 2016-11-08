@@ -24,19 +24,19 @@ public class PlayerChase : MonoBehaviour {
 		LEdge = parentAI.transform.FindChild ("AI LEdge").gameObject;
 		REdge = parentAI.transform.FindChild ("AI REdge").gameObject;
 		MEdge = parentAI.transform.FindChild ("AI MEdge").gameObject;
-		MEdge.GetComponent<BoxCollider> ().enabled = false;
+		MEdge.GetComponent<BoxCollider2D> ().enabled = false;
 	}
 
-	void OnTriggerStay (Collider col){
+	void OnTriggerStay2D (Collider2D col){
 		if (col.transform.tag == "Player") {
-			LEdge.GetComponent<BoxCollider> ().enabled = false;
-			REdge.GetComponent<BoxCollider> ().enabled = false;
+			LEdge.GetComponent<BoxCollider2D> ().enabled = false;
+			REdge.GetComponent<BoxCollider2D> ().enabled = false;
 			enemy.AISpeed = 0;
 			enemy.ChasePlayer ();
 		}
 	}
 
-	void OnTriggerExit (Collider col){
+	void OnTriggerExit2D (Collider2D col){
 		if (col.transform.tag == "Player") {
 			ActivateAIEdges ();
 
@@ -44,7 +44,7 @@ public class PlayerChase : MonoBehaviour {
 	}
 
 	public void ActivateAIEdges (){
-		MEdge.GetComponent<BoxCollider> ().enabled = true;
+		MEdge.GetComponent<BoxCollider2D> ().enabled = true;
 		enemy.AISpeed = 2;
 		Vector3 direction = (MEdge.transform.position - parentEnemy.transform.position).normalized;
 		float distance = (MEdge.transform.position - parentEnemy.transform.position).magnitude;

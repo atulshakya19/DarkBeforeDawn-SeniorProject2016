@@ -3,24 +3,24 @@ using System.Collections;
 
 public class MovementAI : MonoBehaviour {
 
-	private Rigidbody rigidbody;
+	private Rigidbody2D rigidbody;
 	public float AISpeed = 2;
 	public float speed = 0.10f;
 	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
-		rigidbody = GetComponent<Rigidbody> ();
+		rigidbody = GetComponent<Rigidbody2D> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate (new Vector3 (AISpeed, 0, 0) * Time.deltaTime); 
+		transform.Translate (new Vector2 (AISpeed, 0) * Time.deltaTime); 
 		rigidbody.freezeRotation = true;
 	}
 
-	void OnTriggerEnter (Collider other){
+	void OnTriggerEnter2D (Collider2D other){
 		if (other.transform.tag == "AI Edge") {
 			AISpeed *= -1;
 		}

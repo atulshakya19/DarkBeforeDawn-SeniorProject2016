@@ -25,13 +25,27 @@ public class GemPickup : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter (Collider other){
+	/*
+	void OnTriggerEnter2D (Collider2D other){
 		if (other.transform.tag == "Gem 1") {
-			GemBag [0] = other.transform.tag;
+
 		}else if (other.transform.tag == "Gem 2") {
 			GemBag [1] = other.transform.tag;
 		}else if (other.transform.tag == "Gem 3") {
 			GemBag [2] = other.transform.tag;
 		}
+	}
+	*/
+
+	public void Gem1(){
+		GemBag [0] = "Gem 1";
+	}
+
+	public void Gem2(){
+		GemBag [1] = "Gem 1";
+	}
+
+	public void Gem3(){
+		GemBag [2] = "Gem 1";
 	}
 }

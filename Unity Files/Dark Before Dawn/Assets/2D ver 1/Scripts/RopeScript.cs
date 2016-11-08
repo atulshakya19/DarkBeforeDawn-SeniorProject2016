@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class RopeScript : MonoBehaviour {
 
 	public Vector2 destiny;
-	private throwhook _throwhook;
+	private throwhook1 _throwhook;
 
 	public float speed= 1;
 
@@ -36,7 +36,7 @@ public class RopeScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		_throwhook = GetComponent<throwhook> ();
+		_throwhook = GetComponent<throwhook1> ();
 
 		lr = GetComponent<LineRenderer> ();
 
