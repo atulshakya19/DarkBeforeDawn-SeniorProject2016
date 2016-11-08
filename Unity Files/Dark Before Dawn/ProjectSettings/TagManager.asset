@@ -29,6 +29,7 @@ TagManager:
   - SlowBulletEnemy
   - Through
   - Trap
+  - Death
   layers:
   - Default
   - TransparentFX

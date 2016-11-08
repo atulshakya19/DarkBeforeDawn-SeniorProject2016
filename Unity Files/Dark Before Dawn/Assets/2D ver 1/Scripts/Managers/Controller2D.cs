@@ -136,6 +136,11 @@ public class Controller2D : RaycastController {
 				if (hit.collider.tag == "Trap") {
 					gameObject.GetComponent<PlayerHealth> ().isDamaged (spikeDamage, damageTimer);
 				}
+
+				if (hit.collider.tag == "Death") {
+					gameObject.GetComponent<PlayerHealth> ().Death ();
+				}
+
 				moveAmount.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;
 

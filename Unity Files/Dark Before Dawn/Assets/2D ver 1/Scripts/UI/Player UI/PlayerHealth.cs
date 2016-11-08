@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthBar.value = currentHealth;
 	}
 
-	void Death(){
+	public void Death(){
 		
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
