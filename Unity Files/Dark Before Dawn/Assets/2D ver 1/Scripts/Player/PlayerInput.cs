@@ -16,10 +16,10 @@ public class PlayerInput : MonoBehaviour {
 		player.SetDirectionalInput (directionalInput);
 
 
-		if (Input.GetKeyDown(KeyCode.UpArrow)) {
+		if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyUp (KeyCode.W)) {
 			player.OnJumpInputDown ();
 		}
-		if (Input.GetKeyUp (KeyCode.UpArrow)) {
+		if (Input.GetKeyUp (KeyCode.UpArrow) || Input.GetKeyUp (KeyCode.W)) {
 			player.OnJumpInputUp ();
 		}
 	}

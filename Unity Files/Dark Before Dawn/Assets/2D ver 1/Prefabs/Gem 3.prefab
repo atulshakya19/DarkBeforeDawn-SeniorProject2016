@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000014041925750}
   - 114: {fileID: 114000010454534056}
   - 58: {fileID: 58000013974318392}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Gem 3
   m_TagString: Gem 3
   m_Icon: {fileID: 0}

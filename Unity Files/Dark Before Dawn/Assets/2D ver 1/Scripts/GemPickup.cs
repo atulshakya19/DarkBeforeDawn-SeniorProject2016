@@ -14,7 +14,7 @@ public class GemPickup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		/*
 		if (Input.GetKeyDown(KeyCode.Alpha1) && GemBag[0] != ""){
 			ActiveGem = GemBag [0];
 		} else if (Input.GetKeyDown(KeyCode.Alpha2) && GemBag[1] != ""){
@@ -22,6 +22,7 @@ public class GemPickup : MonoBehaviour {
 		} else if (Input.GetKeyDown(KeyCode.Alpha3) && GemBag[2] != ""){
 			ActiveGem = GemBag [2];
 		}
+*/
 
 	}
 

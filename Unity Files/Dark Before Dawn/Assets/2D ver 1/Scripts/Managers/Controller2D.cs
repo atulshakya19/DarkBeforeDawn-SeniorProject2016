@@ -13,7 +13,7 @@ public class Controller2D : RaycastController {
 	public int slowBullet;
 	public int slowTimer;
 
-	private GemPickup gemPickup = GameObject.FindObjectOfType<GemPickup>();
+	private GemPickup gemPickup;
 
 	[HideInInspector]
 	public CollisionInfo collisions;
@@ -23,6 +23,8 @@ public class Controller2D : RaycastController {
 	public override void Start() {
 		base.Start ();
 		collisions.faceDir = 1;
+
+		gemPickup = GameObject.FindObjectOfType<GemPickup>();
 	}
 
 	public void Move(Vector2 moveAmount, bool standingOnPlatform) {
@@ -79,6 +81,7 @@ public class Controller2D : RaycastController {
 
 				if (hit.collider.tag == "Gem 1") {
 					gemPickup.Gem1 (); 
+					Destroy (hit.collider.gameObject);
 				} else if (hit.collider.tag == "Gem 2") {
 					gemPickup.Gem2 (); 
 				}else if (hit.collider.tag == "Gem 3") {
