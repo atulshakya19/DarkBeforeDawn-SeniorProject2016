@@ -4,6 +4,7 @@ using System.Collections;
 public class RopeSwing1 : MonoBehaviour {
 
 	public GameObject ropeSpawn;
+	private moveHook _moveHook;
 
 	private SpringJoint2D rope;
 	public int maxRopeFrameCount;
@@ -12,8 +13,9 @@ public class RopeSwing1 : MonoBehaviour {
 
 	public LineRenderer lineRenderer;
 
-	// Update is called once per frame
-	void Update () {
+	void Start () {
+
+		_moveHook = GameObject.FindObjectOfType<moveHook> ();
 
 	}
 
@@ -40,23 +42,23 @@ public class RopeSwing1 : MonoBehaviour {
 	}
 
 	void Fire (){
-		Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		//Vector3 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 		Vector3 position = ropeSpawn.transform.position;
-		Vector3 direction = mousePosition-position;
+		Vector3 direction = _moveHook.destiny-position;
 
-		RaycastHit2D hit = Physics2D.Raycast (position, direction, Mathf.Infinity);
+		//RaycastHit2D hit = Physics2D.Raycast (position, direction, Mathf.Infinity);
 
-		if (hit.collider != null) {
-			Debug.Log (hit.collider.tag);
+		//if (hit.collider != null) {
+			//Debug.Log (hit.collider.tag);
 			SpringJoint2D newRope = ropeSpawn.AddComponent<SpringJoint2D> ();
 			newRope.enableCollision = false;
 			newRope.frequency = 0f;
-			newRope.connectedAnchor = hit.point;
+			newRope.connectedAnchor = _moveHook.destiny;
 			newRope.enabled = true;
 
 			GameObject.DestroyImmediate (rope);
 			rope = newRope;
 			ropeFrameCount = 0;
-		}
+		//}
 	}
 }

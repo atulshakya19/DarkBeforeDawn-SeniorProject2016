@@ -7,6 +7,8 @@ public class moveHook : MonoBehaviour {
 	private Vector2 _direction;
 	private bool _touch = false;
 
+	public Vector3 destiny;
+
 	// Use this for initialization
 	void Start () {
 		_hook = GameObject.FindObjectOfType<HookFire> ();
@@ -30,11 +32,9 @@ public class moveHook : MonoBehaviour {
 		
 
 	void OnTriggerEnter2D (Collider2D col){
-		Debug.Log ("Hi1");
 		if (col.gameObject.tag == "Swinging Platform") {
-			Debug.Log ("Hit");
 			_touch = true;
-			//destiny = transform.position;
+			destiny = transform.position;
 		}
 	}
 
