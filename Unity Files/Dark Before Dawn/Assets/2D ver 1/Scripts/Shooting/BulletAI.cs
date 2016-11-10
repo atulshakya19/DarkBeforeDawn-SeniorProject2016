@@ -19,6 +19,7 @@ public class BulletAI : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		player = GameObject.FindGameObjectWithTag ("Player");
 		playerPosition = player.transform.position;
 	}
 		
@@ -58,13 +59,11 @@ public class BulletAI : MonoBehaviour {
         }
     }*/
 
-	void OnCollisionEnter(Collision other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.transform.tag == "Player") {
-			print ("HITO");
-			Destroy(this.gameObject);
-			EnemyShoot.bulletNum -= 1;
-		}
+		Debug.Log ("Shoot");
+		Destroy(this.gameObject);
+		EnemyShoot.bulletNum -= 1;
 	}
 
     // Kill the bullet after bulletHalfLife

@@ -6,10 +6,21 @@ public class BulletScript : MonoBehaviour {
 
 	public float BulletHalfLife;
 	private bool _started;
+	private bool _facingRight = true;
+	private Controller2D _controller;
+
 
 	// Use this for initialization
 	void Start () {
 	
+		_controller = GameObject.FindObjectOfType<Controller2D> ();
+
+		if (_controller.collisions.faceDir > 0) {
+			_facingRight = true;
+		} else if (_controller.collisions.faceDir < 0) {
+			_facingRight = false;
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -29,16 +40,17 @@ public class BulletScript : MonoBehaviour {
 
 	void Move()
 	{
-		transform.Translate (Vector2.right * Time.deltaTime * 25f);
+		if (_facingRight) {
+			transform.Translate (Vector2.right * Time.deltaTime * 25f);
+		} else {
+			transform.Translate (Vector2.left * Time.deltaTime * 25f);
+		}
 	}
 
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.transform.tag == "Enemy") {
-			print ("HIT!!!");
-			Destroy(this.gameObject);
-		}
+			//Destroy(this.gameObject);
 	}
 	// Kill the bullet after bulletHalfLife
 
