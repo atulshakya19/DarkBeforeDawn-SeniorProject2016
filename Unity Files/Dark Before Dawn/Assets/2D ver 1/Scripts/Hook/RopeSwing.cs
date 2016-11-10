@@ -24,7 +24,7 @@ public class RopeSwing : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetMouseButtonDown (1)) {
-
+			ropeSpawn.transform.position = player.transform.position;  //ok
 			if (ropeActive == false /*&& GemActive == "Gem 1"*/) {
 				//ropeSpawn.SetActive (true);
 				//player.SetActive (false);
