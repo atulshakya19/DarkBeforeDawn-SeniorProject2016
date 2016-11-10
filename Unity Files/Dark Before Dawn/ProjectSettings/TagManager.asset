@@ -19,6 +19,18 @@ TagManager:
   - Hook
   - Bullet
   - Bullet AI
+  - Teleport1a
+  - Teleport1b
+  - Teleport1c
+  - Teleport1d
+  - Teleport1e
+  - Teleport1f
+  - Teleport1g
+  - SlowBulletEnemy
+  - Through
+  - Trap
+  - Death
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -29,10 +41,10 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
-  - 
-  - 
+  - Obstacle
+  - Platforms
+  - Traps
+  - Gems
   - 
   - 
   - 
@@ -55,4 +67,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 57958461
+    locked: 0
+  - name: UI
+    uniqueID: 3714978089
     locked: 0
