@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 
 	public float doubleJump = 5;
 	public bool canDoubleJump;
+	public bool canWallJump;
 
 	Controller2D controller;
 
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour {
 	void Update() {
 		CalculateVelocity ();
 		HandleWallSliding ();
+		
 
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
@@ -89,7 +91,7 @@ public class Player : MonoBehaviour {
 			}
 		} else if (canDoubleJump) {
 			canDoubleJump = false;
-			velocity.y = doubleJump;
+			velocity.y = maxJumpVelocity;
 		}
 	}
 
@@ -116,18 +118,15 @@ public class Player : MonoBehaviour {
 
 				if (directionalInput.x != wallDirX && directionalInput.x != 0) {
 					unstickTime -= Time.deltaTime;
-				}
-				else {
+				} else {
 					unstickTime = stickTime;
 				}
-			}
-			else {
+			} else {
 				unstickTime = stickTime;
 			}
-
 		}
-
 	}
+	
 
 	void CalculateVelocity() {
 		float targetVelocityX = directionalInput.x * moveSpeed;

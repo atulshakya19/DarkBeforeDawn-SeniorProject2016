@@ -30,6 +30,7 @@ TagManager:
   - Through
   - Trap
   - Death
+  - Wall
   layers:
   - Default
   - TransparentFX

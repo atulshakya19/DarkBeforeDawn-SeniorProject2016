@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using UnityEngine;
 using System.Collections;
 
@@ -148,6 +148,7 @@ public class Controller2D : RaycastController {
 
 				if (hit.collider.tag == "Trap") {
 					gameObject.GetComponent<PlayerHealth> ().isDamaged (spikeDamage, damageTimer);
+					gameObject.GetComponent<Player> ().OnJumpInputUp();
 				}
 
 				if (hit.collider.tag == "Death") {
