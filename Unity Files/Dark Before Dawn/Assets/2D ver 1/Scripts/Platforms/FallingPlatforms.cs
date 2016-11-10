@@ -9,16 +9,15 @@ public class FallingPlatforms : MonoBehaviour {
 	//How long should the bullet live
 	public float platformTime =5f;
 
-	// Has the spawning started
-	private bool _started;
+	public bool _started;
 
-	void OnCollisionEnter (Collision col){
+	public void OnCollisionEnter (Collision col){
 		if (col.transform.tag == "Player") {
+			print ("Hit!");
 			if (!_started)
 			{
 				StartCoroutine(TimeToDie());
 			}
-
 
 			rb2d.freezeRotation = true;
 		}

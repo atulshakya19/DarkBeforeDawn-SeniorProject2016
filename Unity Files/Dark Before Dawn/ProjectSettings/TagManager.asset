@@ -31,6 +31,9 @@ TagManager:
   - Trap
   - Death
   - Wall
+  - Falling
+  - Spawn Trigger
+  - Falling Object
   layers:
   - Default
   - TransparentFX

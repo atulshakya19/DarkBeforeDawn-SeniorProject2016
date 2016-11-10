@@ -23,9 +23,9 @@ GameObject:
   - 114: {fileID: 114000011665334722}
   - 50: {fileID: 50000013779582144}
   - 61: {fileID: 61000013306795728}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object1
-  m_TagString: Untagged
+  m_TagString: Falling Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675f1b92c62ed2740a73a6badd606edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyDelay: 3
+  destroyDelay: 5
 --- !u!212 &212000011962754742
 SpriteRenderer:
   m_ObjectHideFlags: 1

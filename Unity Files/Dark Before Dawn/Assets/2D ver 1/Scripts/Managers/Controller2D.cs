@@ -4,9 +4,19 @@ using System.Collections;
 
 public class Controller2D : RaycastController {
 
+	public Transform a2;
+	public Transform b2;
+	public Transform c2;
+	public Transform d2;
+	public Transform e2;
+	public Transform f2;
+	public Transform g2;
+
 	public float maxSlope = 80;
 
-	public int foDamage;
+	public float platformTimer = 0.5f;
+
+	public int fallingObjectDamage;
 	public float damageTimer = 0.05f;
 	public int spikeDamage;
 	public int enemyBullet;
@@ -14,6 +24,9 @@ public class Controller2D : RaycastController {
 	public int slowTimer;
 
 	private GemPickup gemPickup;
+	private GameObject fallingPlatform;
+	private SpawnObject spawn;
+
 
 	[HideInInspector]
 	public CollisionInfo collisions;
@@ -25,6 +38,7 @@ public class Controller2D : RaycastController {
 		collisions.faceDir = 1;
 
 		gemPickup = GameObject.FindObjectOfType<GemPickup>();
+		fallingPlatform = GameObject.FindGameObjectWithTag ("Falling");
 	}
 
 	public void Move(Vector2 moveAmount, bool standingOnPlatform) {
@@ -87,6 +101,45 @@ public class Controller2D : RaycastController {
 				}else if (hit.collider.tag == "Gem 3") {
 					gemPickup.Gem3 (); 
 				}
+
+				if (hit.collider.tag == "Teleport1a") {
+					transform.position = a2.position;
+				}
+				if (hit.collider.tag == "Teleport1b") {
+					transform.position = b2.position;
+				}
+				if (hit.collider.tag == "Teleport1c") {
+					transform.position = c2.position;
+				}
+				if (hit.collider.tag == "Teleport1d") {
+					transform.position = d2.position;
+				}
+				if (hit.collider.tag == "Teleport1e") {
+					transform.position = e2.position;
+				}
+				if (hit.collider.tag == "Teleport1f") {
+					transform.position = f2.position;
+				}
+				if (hit.collider.tag == "Teleport1g") {
+					transform.position = g2.position;
+				}
+
+				if (hit.collider.tag == "Spawn Trigger") {
+					print ("hit");
+					if (directionX == 1 || hit.distance == 0) {
+						continue;
+					}
+					if (collisions.fallingThroughPlatform) {
+						continue;
+					}
+					if (playerInput.y == -1) {
+						collisions.fallingThroughPlatform = true;
+						Invoke("ResetFallingThroughPlatform",.5f);
+						continue;
+					}
+					spawn.GetComponent<SpawnObject> ().Spawn ();
+				}
+
 
 				float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
@@ -153,6 +206,17 @@ public class Controller2D : RaycastController {
 
 				if (hit.collider.tag == "Death") {
 					gameObject.GetComponent<PlayerHealth> ().Death ();
+				}
+
+				if (hit.collider.tag == "Falling") {
+					print ("hit!");
+					fallingPlatform.GetComponent<Rigidbody2D> ().isKinematic = false;
+
+				}
+
+				if (hit.collider.tag == "Falling Objects") {
+					//gameObject.GetComponent<PlayerHealth> ().isDamaged (fallingObjectDamage);
+					gameObject.GetComponent<Player> ().OnJumpInputUp();
 				}
 
 				moveAmount.y = (hit.distance - skinWidth) * directionY;
@@ -278,5 +342,5 @@ public class Controller2D : RaycastController {
 			slopeAngle = 0;
 		}
 	}
-
+		
 }

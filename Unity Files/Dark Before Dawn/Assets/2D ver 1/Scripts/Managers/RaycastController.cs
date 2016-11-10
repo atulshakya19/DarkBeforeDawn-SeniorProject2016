@@ -21,6 +21,8 @@ public class RaycastController : MonoBehaviour {
 
 	[HideInInspector]
 	public BoxCollider2D collider;
+	[HideInInspector]
+	public BoxCollider2D collisions;
 	public RaycastOrigins raycastOrigins;
 
 	public virtual void Awake() {
