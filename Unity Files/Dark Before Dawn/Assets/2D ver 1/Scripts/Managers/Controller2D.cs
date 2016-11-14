@@ -12,6 +12,8 @@ public class Controller2D : RaycastController {
 	public Transform f2;
 	public Transform g2;
 
+	private Rigidbody2D _rb;
+
 	[Header("Slope")]
 	public float maxSlope = 80;
 
@@ -40,6 +42,7 @@ public class Controller2D : RaycastController {
 		collisions.faceDir = 1;
 
 		gemPickup = GameObject.FindObjectOfType<GemPickup>();
+		_rb = GetComponent<Rigidbody2D> ();
 	}
 
 	public void Move(Vector2 moveAmount, bool standingOnPlatform) {
@@ -102,6 +105,7 @@ public class Controller2D : RaycastController {
 				}else if (hit.collider.tag == "Gem 3") {
 					gemPickup.Gem3 (); 
 				}
+					
 
 				if (hit.collider.tag == "Teleport1a") {
 					transform.position = a2.position;

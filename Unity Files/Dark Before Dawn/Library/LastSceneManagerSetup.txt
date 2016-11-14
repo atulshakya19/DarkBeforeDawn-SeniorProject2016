@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/2D ver 1/_Scene/Forest Level 2Dv2.unity
+- path: Assets/2D ver 1/_Scene/Forest Level 2D.unity
   isLoaded: 1
   isActive: 1

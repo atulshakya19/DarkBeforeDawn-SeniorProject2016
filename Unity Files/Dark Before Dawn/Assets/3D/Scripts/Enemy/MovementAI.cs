@@ -8,6 +8,7 @@ public class MovementAI : MonoBehaviour {
 	public float speed = 0.10f;
 	public GameObject player;
 
+
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D> ();
@@ -31,5 +32,11 @@ public class MovementAI : MonoBehaviour {
 		float distance = (player.transform.position - transform.position).magnitude;
 		Vector3 move = transform.position + (direction * speed/2);
 		transform.position = move;
+	}
+
+	void OnCollisionEnter2D (Collision2D other){
+		if (other.transform.tag == "Player") {
+			player.transform.position = transform.position + new Vector3 (-1.5f,0,0);
+		}
 	}
 }
