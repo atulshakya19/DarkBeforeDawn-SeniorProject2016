@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 	public float timeApex = .4f;
 	float accelAir = .2f;
 	float accelGround = .1f;
-	float moveSpeed = 6;
+	public float moveSpeed = 6;
 
 	public Vector2 wallJumpClimb;
 	public Vector2 wallJumpOff;
