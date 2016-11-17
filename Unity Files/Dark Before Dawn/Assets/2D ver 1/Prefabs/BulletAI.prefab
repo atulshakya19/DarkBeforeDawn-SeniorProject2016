@@ -24,7 +24,7 @@ GameObject:
   - 114: {fileID: 114000011129913146}
   m_Layer: 0
   m_Name: BulletAI
-  m_TagString: Untagged
+  m_TagString: Bullet AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 0.5
-  BulletHalfLife: 1
+  BulletHalfLife: 1.5
   bulletDamage: 2
   speed: 0.1
 --- !u!212 &212000011639445144

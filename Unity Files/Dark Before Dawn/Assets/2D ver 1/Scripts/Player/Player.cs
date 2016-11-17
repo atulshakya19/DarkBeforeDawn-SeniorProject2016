@@ -45,9 +45,10 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update() {
+
 		CalculateVelocity ();
 		HandleWallSliding ();
-		
+
 
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 

@@ -16,9 +16,12 @@ public class BulletAI : MonoBehaviour {
     // Has the spawning started
     private bool _started;
 
+	private Player playerScript;
+
 	// Use this for initialization
 	void Start ()
 	{
+		playerScript = GameObject.FindObjectOfType<Player> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerPosition = player.transform.position;
 	}
@@ -61,7 +64,6 @@ public class BulletAI : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log ("Shoot");
 		Destroy(this.gameObject);
 		EnemyShoot.bulletNum -= 1;
 	}
