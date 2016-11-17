@@ -38,20 +38,17 @@ public class BulletAttack : MonoBehaviour {
 
 	void Update ()
 	{
-		timer += Time.deltaTime;
-		if(timer >= timeBetweenAttacks && lOS && enemyHealthBar.currentHealth > 0)
-		{
-			Attack ();
-		}
+
 	}
 
 
-	void Attack ()
+	void OnTriggerEnter (Collider other)
 	{
-		timer = 0f;
-		if(enemyHealthBar.currentHealth > 0)
-		{
-			enemyHealthBar.isDamaged (bulletDamage);
+		if (other.transform.tag == "Enemy") {
+			timer = 0f;
+			if (enemyHealthBar.currentHealth > 0) {
+				enemyHealthBar.isDamaged (bulletDamage);
+			}
 		}
 	}
 }

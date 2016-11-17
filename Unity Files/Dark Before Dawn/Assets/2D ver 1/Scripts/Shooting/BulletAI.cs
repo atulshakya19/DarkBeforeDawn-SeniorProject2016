@@ -17,6 +17,7 @@ public class BulletAI : MonoBehaviour {
     private bool _started;
 
 	private Player playerScript;
+	private PlayerHealth playerFruit;
 
 	// Use this for initialization
 	void Start ()
@@ -66,6 +67,9 @@ public class BulletAI : MonoBehaviour {
 	{
 		Destroy(this.gameObject);
 		EnemyShoot.bulletNum -= 1;
+		if (other.transform.tag == "Player") {
+			playerFruit.isDamaged (bulletDamage);
+		}
 	}
 
     // Kill the bullet after bulletHalfLife

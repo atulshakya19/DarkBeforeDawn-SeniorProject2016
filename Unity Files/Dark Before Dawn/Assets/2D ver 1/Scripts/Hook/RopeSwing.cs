@@ -24,7 +24,7 @@ public class RopeSwing : MonoBehaviour {
 	void Update () {
 	
 		if (Input.GetMouseButtonDown (1)) {
-			ropeSpawn.transform.position = player.transform.position;  //ok
+			//ropeSpawn.transform.position = player.transform.position;  //ok
 			if (ropeActive == false /*&& GemActive == "Gem 1"*/) {
 				//ropeSpawn.SetActive (true);
 				//player.SetActive (false);
@@ -42,10 +42,10 @@ public class RopeSwing : MonoBehaviour {
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.A)){
+		if (Input.GetKeyDown (KeyCode.A) && Input.GetKeyDown (KeyCode.LeftArrow)){
 			Rigidbody2D rb = ropeSpawn.GetComponent<Rigidbody2D>();
 			rb.AddForce (new Vector2 (-10,0),ForceMode2D.Impulse);
-		} else if (Input.GetKeyDown (KeyCode.D)){
+		} else if (Input.GetKeyDown (KeyCode.D)&& Input.GetKeyDown (KeyCode.RightArrow)){
 			Rigidbody2D rb = ropeSpawn.GetComponent<Rigidbody2D>();
 			rb.AddForce (new Vector2 (10,0),ForceMode2D.Impulse);
 		}

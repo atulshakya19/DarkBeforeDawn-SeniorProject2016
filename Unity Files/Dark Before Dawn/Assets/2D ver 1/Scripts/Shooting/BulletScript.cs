@@ -8,11 +8,13 @@ public class BulletScript : MonoBehaviour {
 	private bool _started;
 	private bool _facingRight = true;
 	private Controller2D _controller;
+	private EnemyHealthBar enemyHealth;
+	public int damage;
 
 
 	// Use this for initialization
 	void Start () {
-	
+		enemyHealth = GameObject.FindObjectOfType<EnemyHealthBar> ();
 		_controller = GameObject.FindObjectOfType<Controller2D> ();
 
 		if (_controller.collisions.faceDir > 0) {
@@ -50,7 +52,11 @@ public class BulletScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-			//Destroy(this.gameObject);
+		if (other.transform.tag == "Enemy") {
+			print ("HIT");
+			enemyHealth.isDamaged (damage);
+			Destroy (this.gameObject);
+		}
 	}
 	// Kill the bullet after bulletHalfLife
 
