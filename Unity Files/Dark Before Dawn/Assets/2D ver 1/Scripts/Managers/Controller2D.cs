@@ -187,14 +187,41 @@ public class Controller2D : RaycastController {
 					}
 				}
 
-				if (hit.collider.tag == "Trap") {
-					gameObject.GetComponent<PlayerHealth> ().isDamaged (spikeDamage, damageTimer);
+				/*if (hit.collider.tag == "Trap") {
+					gameObject.GetComponent<PlayerHealth> ().isDamaged (spikeDamage);
 					gameObject.GetComponent<Player> ().OnJumpInputUp();
-				}
+				}*/
 
 				if (hit.collider.tag == "Death") {
 					gameObject.GetComponent<PlayerHealth> ().Death ();
 				}
+
+				if (hit.collider.tag == "Teleport1a") {
+					transform.position = a2.position;
+				}
+				if (hit.collider.tag == "Teleport1b") {
+					transform.position = b2.position;
+				}
+				if (hit.collider.tag == "Teleport1c") {
+					transform.position = c2.position;
+				}
+				if (hit.collider.tag == "Teleport1d") {
+					transform.position = d2.position;
+				}
+				if (hit.collider.tag == "Teleport1e") {
+					transform.position = e2.position;
+				}
+				if (hit.collider.tag == "Teleport1f") {
+					transform.position = f2.position;
+				}
+				if (hit.collider.tag == "Teleport1g") {
+					transform.position = g2.position;
+				}
+
+				/*if (hit.collider.tag == "Falling Object") {
+					gameObject.GetComponent<PlayerHealth> ().isDamaged (foDamage);
+					Destroy (GameObject.FindGameObjectWithTag ("Falling Object"));
+				}*/
 
 				moveAmount.y = (hit.distance - skinWidth) * directionY;
 				rayLength = hit.distance;

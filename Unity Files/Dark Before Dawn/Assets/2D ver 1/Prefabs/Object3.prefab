@@ -23,9 +23,9 @@ GameObject:
   - 114: {fileID: 114000014175837428}
   - 50: {fileID: 50000012797159340}
   - 61: {fileID: 61000010454166490}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object3
-  m_TagString: Untagged
+  m_TagString: Falling Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

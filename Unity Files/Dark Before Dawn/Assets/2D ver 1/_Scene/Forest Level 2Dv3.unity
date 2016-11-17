@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 18665226}
   - 61: {fileID: 18665227}
+  - 114: {fileID: 18665228}
   m_Layer: 9
   m_Name: Spikes (8)
   m_TagString: Trap
@@ -137,6 +138,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &18665228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 18665225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &36168388
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,8 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b849535fe1b5be4395000489554d5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0.32928517
-  spawnWait: 0.45
+  spawnTime: 0.325
+  spawnWait: 0.4
   fallingObjects:
   - {fileID: 1000011387965174, guid: dd586bc22c5967a46ab50ec85c608a1a, type: 2}
   - {fileID: 1000012545496434, guid: 625835cd73e419140adfee16f2a7d5b3, type: 2}
@@ -1802,6 +1815,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 194432262}
   - 61: {fileID: 194432263}
+  - 114: {fileID: 194432264}
   m_Layer: 9
   m_Name: Spikes (19)
   m_TagString: Trap
@@ -1839,6 +1853,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &194432264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194432261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &198163103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2403,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 235463513}
   - 61: {fileID: 235463514}
+  - 114: {fileID: 235463515}
   m_Layer: 9
   m_Name: Spikes (7)
   m_TagString: Trap
@@ -2414,6 +2441,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &235463515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235463512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &247128618
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2463,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 247128619}
   - 61: {fileID: 247128620}
+  - 114: {fileID: 247128621}
   m_Layer: 9
   m_Name: Spikes (13)
   m_TagString: Trap
@@ -2461,6 +2501,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &247128621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247128618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &250451342
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,11 +4070,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000014274291782, guid: e36549c4d5a8a7248bc897788990bbe1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 281.3
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 4000014274291782, guid: e36549c4d5a8a7248bc897788990bbe1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 53.7
+      value: 20.4
       objectReference: {fileID: 0}
     - target: {fileID: 4000014274291782, guid: e36549c4d5a8a7248bc897788990bbe1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4938,6 +4990,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 512997548}
   - 61: {fileID: 512997549}
+  - 114: {fileID: 512997550}
   m_Layer: 9
   m_Name: Spikes (12)
   m_TagString: Trap
@@ -4975,6 +5028,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &512997550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512997547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &521042149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5712,6 +5777,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 581417239}
   - 61: {fileID: 581417240}
+  - 114: {fileID: 581417241}
   m_Layer: 9
   m_Name: Spikes (4)
   m_TagString: Trap
@@ -5749,6 +5815,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &581417241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 581417238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &584610625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5836,6 +5914,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 589356406}
   - 61: {fileID: 589356407}
+  - 114: {fileID: 589356408}
   m_Layer: 9
   m_Name: Spikes (6)
   m_TagString: Trap
@@ -5873,6 +5952,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &589356408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 589356405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &606883429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5883,6 +5974,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 606883430}
   - 61: {fileID: 606883431}
+  - 114: {fileID: 606883432}
   m_Layer: 9
   m_Name: Spikes (11)
   m_TagString: Trap
@@ -5920,6 +6012,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &606883432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 606883429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &613116583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,6 +6204,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 645113719}
   - 61: {fileID: 645113720}
+  - 114: {fileID: 645113721}
   m_Layer: 9
   m_Name: Spikes (3)
   m_TagString: Trap
@@ -6137,6 +6242,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &645113721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 645113718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &655960632
 GameObject:
   m_ObjectHideFlags: 0
@@ -6272,6 +6389,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 669267862}
   - 61: {fileID: 669267863}
+  - 114: {fileID: 669267864}
   m_Layer: 9
   m_Name: Spikes (5)
   m_TagString: Trap
@@ -6309,6 +6427,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &669267864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 669267861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &670690475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8859,6 +8989,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1005381341}
   - 61: {fileID: 1005381342}
+  - 114: {fileID: 1005381343}
   m_Layer: 9
   m_Name: Spikes (9)
   m_TagString: Trap
@@ -8896,6 +9027,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &1005381343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1005381340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1013280436
 GameObject:
   m_ObjectHideFlags: 0
@@ -9163,6 +9306,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1028980823}
   - 61: {fileID: 1028980824}
+  - 114: {fileID: 1028980825}
   m_Layer: 9
   m_Name: Spikes (15)
   m_TagString: Trap
@@ -9200,6 +9344,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &1028980825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028980822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1029186854
 GameObject:
   m_ObjectHideFlags: 0
@@ -9877,6 +10033,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1124288575}
   - 61: {fileID: 1124288576}
+  - 114: {fileID: 1124288577}
   m_Layer: 9
   m_Name: Spikes (14)
   m_TagString: Trap
@@ -9914,6 +10071,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &1124288577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124288574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1128222737
 GameObject:
   m_ObjectHideFlags: 0
@@ -10403,6 +10572,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1176557320}
   - 61: {fileID: 1176557321}
+  - 114: {fileID: 1176557322}
   m_Layer: 9
   m_Name: Spikes (2)
   m_TagString: Trap
@@ -10452,6 +10622,18 @@ BoxCollider2D:
   m_Offset: {x: -0.38415506, y: -0.00000062561594}
   serializedVersion: 2
   m_Size: {x: 9.324826, y: 1}
+--- !u!114 &1176557322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1176557319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1199505488
 GameObject:
   m_ObjectHideFlags: 0
@@ -10593,6 +10775,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1210749720}
   - 61: {fileID: 1210749721}
+  - 114: {fileID: 1210749722}
   m_Layer: 9
   m_Name: Spikes (1)
   m_TagString: Trap
@@ -10630,6 +10813,18 @@ BoxCollider2D:
   m_Offset: {x: -1.0099937, y: 0.108214}
   serializedVersion: 2
   m_Size: {x: 1.274297, y: 0.71129453}
+--- !u!114 &1210749722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1210749719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1213936033
 GameObject:
   m_ObjectHideFlags: 0
@@ -12587,7 +12782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1276976c1fd9564193859d95806e65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1981679872}
+  target1: {fileID: 1981679872}
+  target2: {fileID: 1700808851}
   verticalOffset: 0
   lookAheadX: 0
   lookSmoothX: 0
@@ -12884,6 +13080,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1436866858}
   - 61: {fileID: 1436866859}
+  - 114: {fileID: 1436866860}
   m_Layer: 9
   m_Name: Spikes (10)
   m_TagString: Trap
@@ -12921,6 +13118,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &1436866860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436866857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1442009035
 GameObject:
   m_ObjectHideFlags: 0
@@ -12931,6 +13140,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1442009036}
   - 61: {fileID: 1442009037}
+  - 114: {fileID: 1442009038}
   m_Layer: 9
   m_Name: Spikes (16)
   m_TagString: Trap
@@ -12968,6 +13178,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &1442009038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1442009035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1445039111
 GameObject:
   m_ObjectHideFlags: 0
@@ -15221,6 +15443,57 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000014054484618, guid: 00c909ad7211bff4d9d8da1aa031beee,
     type: 2}
   m_PrefabInternal: {fileID: 1826836834}
+--- !u!114 &1700808851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700808850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d38ea6ed4efdd843a8b6ca55255c59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  trapMask:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalRayCount: 0
+  verticalRayCount: 0
+  horizontalRaySpacing: 0
+  verticalRaySpacing: 0
+  collider: {fileID: 0}
+  a2: {fileID: 0}
+  b2: {fileID: 0}
+  c2: {fileID: 0}
+  d2: {fileID: 0}
+  e2: {fileID: 0}
+  f2: {fileID: 0}
+  g2: {fileID: 0}
+  maxSlope: 80
+  foDamage: 0
+  damageTimer: 0.05
+  spikeDamage: 0
+  enemyBullet: 0
+  slowBullet: 0
+  slowTimer: 0
+  playerInput: {x: 0, y: 0}
+--- !u!61 &1700808852
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700808850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!1 &1701623551
 GameObject:
   m_ObjectHideFlags: 0
@@ -15945,6 +16218,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1000014054484618, guid: 00c909ad7211bff4d9d8da1aa031beee, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00c909ad7211bff4d9d8da1aa031beee, type: 2}
   m_IsPrefabParent: 0
@@ -16471,6 +16748,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1906415104}
   - 61: {fileID: 1906415105}
+  - 114: {fileID: 1906415106}
   m_Layer: 9
   m_Name: Spikes (17)
   m_TagString: Trap
@@ -16508,6 +16786,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &1906415106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906415103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1908159994
 GameObject:
   m_ObjectHideFlags: 0
@@ -17831,6 +18121,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2101842844}
   - 61: {fileID: 2101842845}
+  - 114: {fileID: 2101842846}
   m_Layer: 9
   m_Name: Spikes (18)
   m_TagString: Trap
@@ -17868,6 +18159,18 @@ BoxCollider2D:
   m_Offset: {x: -0.337344, y: 0.10826397}
   serializedVersion: 2
   m_Size: {x: 1.5234395, y: 0.71129453}
+--- !u!114 &2101842846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2101842843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a23a21a2f75c774fb8ddb90d5b53515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &2102626252
 GameObject:
   m_ObjectHideFlags: 0

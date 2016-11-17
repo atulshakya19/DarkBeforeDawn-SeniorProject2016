@@ -48,13 +48,11 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	public void isDamaged(int amount, float timer){
-		if (timer > 0) {
+	public void isDamaged(int amount){
+		if (currentHealth > 0) {
 			currentHealth -= amount;
-			timer -= Time.deltaTime;
-		} else {
-			timer = timer;
-		}
+			//timer -= Time.deltaTime;
+		} 
 
 	}
 
