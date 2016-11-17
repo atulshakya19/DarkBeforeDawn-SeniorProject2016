@@ -5,15 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
-	public int fullHealth = 100;
+	public int fullHealth = 5;
 	public int currentHealth;
-	public Slider healthBar;
 
 	// Use this for initialization
 	void Start () {
-		currentHealth = fullHealth;	
-		healthBar.maxValue = fullHealth;
-		healthBar.value = currentHealth;
+		currentHealth = fullHealth;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +32,7 @@ public class PlayerHealth : MonoBehaviour {
 		} else {
 			timer = timer;
 		}
-		healthBar.value = currentHealth;
+
 	}
 
 	public void Death(){

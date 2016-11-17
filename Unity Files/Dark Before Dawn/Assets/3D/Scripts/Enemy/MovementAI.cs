@@ -7,6 +7,7 @@ public class MovementAI : MonoBehaviour {
 	public float AISpeed = 2;
 	public float speed = 0.10f;
 	public GameObject player;
+	Controller2D collisionInfo;
 
 
 	// Use this for initialization
@@ -36,7 +37,11 @@ public class MovementAI : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other){
 		if (other.transform.tag == "Player") {
-			player.transform.position = transform.position + new Vector3 (-1.5f,0,0);
+			if (collisionInfo.collisions.right) {
+				player.transform.position = transform.position + new Vector3 (-1.5f, 0, 0);
+			} else {
+				player.transform.position = transform.position + new Vector3 (1.5f, 0, 0);
+			}
 		}
 	}
 }

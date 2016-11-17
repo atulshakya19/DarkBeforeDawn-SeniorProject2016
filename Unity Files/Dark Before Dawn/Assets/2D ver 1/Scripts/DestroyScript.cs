@@ -13,7 +13,7 @@ public class DestroyScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnCollisionEnter2D (Collision2D other){
-		if (other.transform.tag == "Ground" || other.transform.tag == "Player") {
+		if (other.transform.tag == "Ground" || other.transform.tag == "Player" || other.transform.tag == "Through") {
 			Destroy (gameObject, destroyDelay);
 		}
 	}
