@@ -167,6 +167,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &404504319 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013977873742, guid: e36549c4d5a8a7248bc897788990bbe1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1198753888}
+--- !u!114 &404504330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404504319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93924f464dd8a24395ed0839a2e6bff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ropeSpawn: {fileID: 0}
+  maxRopeFrameCount: 0
+  lineRenderer: {fileID: 0}
 --- !u!1001 &544266302
 Prefab:
   m_ObjectHideFlags: 0
@@ -407,6 +426,10 @@ Prefab:
     - target: {fileID: 4000014274291782, guid: e36549c4d5a8a7248bc897788990bbe1, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013977873742, guid: e36549c4d5a8a7248bc897788990bbe1, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114000011427423460, guid: e36549c4d5a8a7248bc897788990bbe1, type: 2}
