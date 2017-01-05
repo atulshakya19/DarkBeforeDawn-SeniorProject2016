@@ -28,6 +28,9 @@ public class Controller2D : RaycastController {
 	public int slowBullet;
 	public int slowTimer;
 
+	public bool canWallJump;
+
+	private Player player;
 	private GemPickup gemPickup;
 	private GameObject fallingPlatform;
 	private SpawnObject spawn;
@@ -127,6 +130,12 @@ public class Controller2D : RaycastController {
 				}
 				if (hit.collider.tag == "Teleport1g") {
 					transform.position = g2.position;
+				}
+
+				if (hit.collider.tag == "Wall") {
+					canWallJump = true;
+				} else {
+					canWallJump = false;
 				}
 
 				float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);

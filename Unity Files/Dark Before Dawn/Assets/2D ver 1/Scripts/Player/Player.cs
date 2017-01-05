@@ -28,7 +28,6 @@ public class Player : MonoBehaviour {
 
 	public float doubleJump = 5;
 	public bool canDoubleJump;
-	public bool canWallJump;
 
 	Controller2D controller;
 
@@ -104,26 +103,28 @@ public class Player : MonoBehaviour {
 		
 
 	void HandleWallSliding() {
-		wallDirX = (controller.collisions.left) ? -1 : 1;
-		wallSliding = false;
-		if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
-			wallSliding = true;
+		if (controller.canWallJump == true) {
+			wallDirX = (controller.collisions.left) ? -1 : 1;
+			wallSliding = false;
+			if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0) {
+				wallSliding = true;
 
-			if (velocity.y < -wallSlideSpeedMax) {
-				velocity.y = -wallSlideSpeedMax;
-			}
+				if (velocity.y < -wallSlideSpeedMax) {
+					velocity.y = -wallSlideSpeedMax;
+				}
 
-			if (unstickTime > 0) {
-				velocityXSmoothing = 0;
-				velocity.x = 0;
+				if (unstickTime > 0) {
+					velocityXSmoothing = 0;
+					velocity.x = 0;
 
-				if (directionalInput.x != wallDirX && directionalInput.x != 0) {
-					unstickTime -= Time.deltaTime;
+					if (directionalInput.x != wallDirX && directionalInput.x != 0) {
+						unstickTime -= Time.deltaTime;
+					} else {
+						unstickTime = stickTime;
+					}
 				} else {
 					unstickTime = stickTime;
 				}
-			} else {
-				unstickTime = stickTime;
 			}
 		}
 	}
